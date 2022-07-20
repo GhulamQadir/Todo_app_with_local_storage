@@ -5,13 +5,18 @@ var getLoggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
 var userAccounts = getUser
 var loggedInUser = getLoggedInUser
 
+var toDosArray = []
+
 var getInfo = "";
 
 for (var i = 0; i < userAccounts.length; i++) {
     if (userAccounts[i].email === loggedInUser.email && userAccounts[i].password === loggedInUser.password) {
-        console.log(userAccounts[i])
+        // console.log(userAccounts[i])
 
         getInfo = userAccounts[i]
+        getInfo.todos = toDosArray
+        toDosArray = userAccounts[i].todos
+        console.log(toDosArray)
 
     }
 }
@@ -22,9 +27,9 @@ var userNameText = document.createTextNode(`Welcome ${getInfo.name}`)
 userName.appendChild(userNameText)
 userInfo.appendChild(userName)
 
+console.log(getInfo)
 
-var toDosArray = getInfo.todos
-console.log(toDosArray)
+
 function addTodo() {
     var todo = document.getElementById('todo_field').value
 
@@ -50,4 +55,3 @@ function addTodo() {
 //     todosList.appendChild(list)
 
 // }
-
