@@ -24,3 +24,13 @@ function signUp() {
 function setItem() {
     localStorage.setItem('userAccounts', JSON.stringify(userAccounts))
 }
+
+
+function getItem() {
+    var getUserAccounts = JSON.parse(localStorage.getItem('userAccounts'))
+    userAccounts = getUserAccounts
+    if (!userAccounts) {
+        userAccounts = []
+    }
+}
+getItem()
