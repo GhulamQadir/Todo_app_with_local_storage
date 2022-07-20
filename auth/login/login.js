@@ -13,6 +13,7 @@ function login() {
 
             localStorage.setItem('loggedInUser', JSON.stringify({ "email": getEmail, "password": getPassword }))
             console.log("matched")
+            window.location.assign('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/home/home.html')
         }
         else if (getEmail === userAccounts[i].email && getPassword != userAccounts[i].password) {
             console.log("Wrong password")
