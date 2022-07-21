@@ -11,6 +11,7 @@ function signUp() {
     var passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[^a-zA-Z0-9])(?!.*\s).{7,15}$/;
 
 
+
     if (name.value === "") {
         name.focus();
         console.log("Please enter your name")
@@ -38,14 +39,22 @@ function signUp() {
         return false;
     }
 
-
     else {
-        userAccounts.push({ "name": name.value, "email": email.value, "password": password.value })
+        var ifUserExists = ""
+        for (var i = 0; i < userAccounts.length; i++) {
+            ifUserExists = userAccounts[i]
+        }
 
-        setItem()
+        if (ifUserExists.email === email.value) {
+            console.log("The email address is already in use by another account")
+        }
+        else {
+            userAccounts.push({ "name": name.value, "email": email.value, "password": password.value })
 
-        window.location.replace('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/auth/login/login.html')
+            setItem()
 
+            window.location.replace('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/auth/login/login.html')
+        }
     }
 
 }
