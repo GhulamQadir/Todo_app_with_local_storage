@@ -8,7 +8,7 @@ function signUp() {
     var password = document.getElementById('password')
 
     var emailPattern = /^[\w\-\.\+]+\@[a-zA-Z0-9\. \-]+\.[a-zA-z0-9]{2,4}$/;
-    var passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[^a-zA-Z0-9])(?!.*\s).{7,15}$/;
+    var passwordPattern = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])");
 
 
 
@@ -16,7 +16,7 @@ function signUp() {
         name.focus();
         console.log("Please enter your name")
     }
-    else if (name.value < 3) {
+    else if (name.value.length < 3) {
         name.focus();
         console.log("Your name is too short")
     }
@@ -33,27 +33,39 @@ function signUp() {
         password.focus();
         console.log("Please enter your password")
     }
-    else if (!(password.value.match(passwordPattern))) {
-        password.focus();
-        console.log("Please enter strong password")
-        return false;
+    else if (password.value.length < 8) {
+        console.log("Your password must be at least 8 characters")
+    }
+    else if (password.value.length > 25) {
+        console.log("Your password must be at max 25 characters")
     }
 
+
     else {
-        var ifUserExists = ""
+        var emailMatch = false;
         for (var i = 0; i < userAccounts.length; i++) {
-            ifUserExists = userAccounts[i]
+            if (email.value === userAccounts[i].email) {
+                console.log("The email address is already in use by another account")
+                emailMatch = true
+            }
         }
 
-        if (ifUserExists.email === email.value) {
-            console.log("The email address is already in use by another account")
-        }
-        else {
-            userAccounts.push({ "name": name.value, "email": email.value, "password": password.value })
+        if (emailMatch === false) {
 
-            setItem()
+            if (!(password.value.match(passwordPattern))) {
+                password.focus();
+                console.log("Your password should contain at least one uppercase character, one lowercase character and one digit")
+                return false;
+            }
 
-            window.location.replace('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/auth/login/login.html')
+            else {
+                userAccounts.push({ "name": name.value, "email": email.value, "password": password.value })
+
+                setItem()
+
+                window.location.replace('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/auth/login/login.html')
+
+            }
         }
     }
 
