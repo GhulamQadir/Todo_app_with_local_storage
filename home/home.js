@@ -75,13 +75,10 @@ function getTodos() {
     }
 }
 getTodos()
-// for (var i = 0; i < toDosArray.length; i++) {
-//     var todosList = document.getElementById('todos_div')
 
-//     var list = document.createElement('p')
-//     var listText = document.createTextNode(toDosArray[i])
-//     list.appendChild(listText)
 
-//     todosList.appendChild(list)
 
-// }
+function logOut() {
+    localStorage.removeItem('loggedInUser')
+    window.location.replace('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/auth/login/login.html')
+}
