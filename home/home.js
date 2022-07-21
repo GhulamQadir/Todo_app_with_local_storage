@@ -6,6 +6,8 @@ var userAccounts = getUser
 var loggedInUser = getLoggedInUser
 
 var toDosArray = []
+var todosDiv = document.getElementById('todos_div')
+
 
 var getInfo = "";
 
@@ -36,16 +38,34 @@ function addTodo() {
 
         toDosArray.push(todo.value)
 
-
         getInfo.todos = toDosArray
         console.log(getInfo)
 
-
         localStorage.setItem('userAccounts', JSON.stringify(userAccounts))
+
+
+        // fetching todos
+        var todoPara = document.createElement('p')
+        var todoText = document.createTextNode(todo.value)
+        todoPara.appendChild(todoText)
+        todosDiv.appendChild(todoPara)
+
 
         todo.value = ""
     }
 }
+
+function getTodosFromLocalStor() {
+    for (var i in toDosArray) {
+        // if (localArray[i].name != "") {
+
+        var todoPara = document.createElement('p')
+        var todoText = document.createTextNode(toDosArray[i])
+        todoPara.appendChild(todoText)
+        todosDiv.appendChild(todoPara)
+    }
+}
+// }
 
 function getTodos() {
     var todos = getInfo.todos
