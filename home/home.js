@@ -21,9 +21,21 @@ for (var i = 0; i < userAccounts.length; i++) {
 
 var userInfo = document.getElementById('userInfo')
 var userName = document.createElement('h1')
-var userNameText = document.createTextNode(`Welcome ${getInfo.name}`)
+var userNameText = document.createTextNode(`Hi, ${getInfo.name}`)
+userName.style.display = "inline"
 userName.appendChild(userNameText)
 userInfo.appendChild(userName)
+
+
+
+var avatar = ""
+var avatarImg = getInfo.gender === "Male" ? avatar = "https://png.pngtree.com/png-vector/20190704/ourmid/pngtree-vector-user-young-boy-avatar-icon-png-image_1538408.jpg" : avatar = "https://cdn.pixabay.com/photo/2016/08/20/05/36/avatar-1606914_1280.png"
+var userAvatar = document.createElement('img')
+userAvatar.setAttribute('src', avatarImg)
+userAvatar.setAttribute('id', 'user_avatar')
+userInfo.appendChild(userAvatar)
+
+
 
 console.log(getInfo)
 
@@ -45,10 +57,23 @@ function addTodo() {
 
 
         // fetching todos
+        var separateTodo = document.createElement('todo')
         var todoPara = document.createElement('p')
+        todoPara.style.display = "inline"
         var todoText = document.createTextNode(todo.value)
         todoPara.appendChild(todoText)
-        todosDiv.appendChild(todoPara)
+        separateTodo.appendChild(todoPara)
+
+        var delBtn = document.createElement('button')
+        var delBtnText = document.createTextNode('Delete')
+        delBtn.appendChild(delBtnText)
+        delBtn.setAttribute('onclick', 'deleteTodo(this)')
+        separateTodo.appendChild(delBtn)
+
+        var lineBreak = document.createElement('br')
+        separateTodo.appendChild(lineBreak)
+
+        todosDiv.appendChild(separateTodo)
 
 
         todo.value = ""
@@ -57,15 +82,43 @@ function addTodo() {
 
 function getTodosFromLocalStor() {
     for (var i in toDosArray) {
-        // if (localArray[i].name != "") {
 
+        var separateTodo = document.createElement('todo')
         var todoPara = document.createElement('p')
+        todoPara.style.display = "inline"
         var todoText = document.createTextNode(toDosArray[i])
         todoPara.appendChild(todoText)
-        todosDiv.appendChild(todoPara)
+        separateTodo.appendChild(todoPara)
+
+        var delBtn = document.createElement('button')
+        var delBtnText = document.createTextNode('Delete')
+        delBtn.appendChild(delBtnText)
+        delBtn.setAttribute('onclick', 'deleteTodo(this)')
+        separateTodo.appendChild(delBtn)
+
+        var lineBreak = document.createElement('br')
+        separateTodo.appendChild(lineBreak)
+
+        todosDiv.appendChild(separateTodo)
+
     }
 }
-// }
+
+
+function deleteTodo(e) {
+    e.parentNode.remove()
+    for (var i = 0; i < toDosArray.length; i++) {
+        if (toDosArray[i] === e.parentNode.firstChild.innerHTML) {
+            toDosArray.splice(i, 1);
+        }
+    }
+    console.log(toDosArray)
+
+    // setting new todos array in local storage
+    getInfo.todos = toDosArray
+    localStorage.setItem('userAccounts', JSON.stringify(userAccounts))
+}
+
 
 function getTodos() {
     var todos = getInfo.todos
