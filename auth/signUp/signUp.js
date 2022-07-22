@@ -6,6 +6,7 @@ function signUp() {
     var name = document.getElementById('name')
     var email = document.getElementById('email')
     var password = document.getElementById('password')
+    var gender = document.getElementById('gender')
 
     var emailPattern = /^[\w\-\.\+]+\@[a-zA-Z0-9\. \-]+\.[a-zA-z0-9]{2,4}$/;
     var passwordPattern = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])");
@@ -40,6 +41,11 @@ function signUp() {
         console.log("Your password must be at max 25 characters")
     }
 
+    if (gender.selectedIndex === 0) {
+        console.log("Please select your gender")
+        return false;
+    }
+
 
     else {
         var emailMatch = false;
@@ -59,7 +65,7 @@ function signUp() {
             }
 
             else {
-                userAccounts.push({ "name": name.value, "email": email.value, "password": password.value })
+                userAccounts.push({ "name": name.value, "email": email.value, "password": password.value, "gender": gender.options[gender.selectedIndex].value })
 
                 setItem()
 
