@@ -3,7 +3,8 @@ var userAccounts = []
 
 
 function signUp() {
-    var name = document.getElementById('name')
+    var firstName = document.getElementById('first_name')
+    var lastName = document.getElementById('last_name')
     var email = document.getElementById('email')
     var password = document.getElementById('password')
     var gender = document.getElementById('gender')
@@ -13,17 +14,30 @@ function signUp() {
 
 
 
-    if (name.value === "") {
-        name.focus();
+    if (firstName.value === "") {
+        firstName.focus();
         console.log("Please enter your name")
+        return false;
     }
-    else if (name.value.length < 3) {
-        name.focus();
+    else if (firstName.value.length < 3) {
+        firstName.focus();
         console.log("Your name is too short")
+        return false;
+    }
+    if (lastName.value === "") {
+        lastName.focus();
+        console.log("Please enter your last name")
+        return false;
+    }
+    else if (lastName.value.length < 2) {
+        lastName.focus();
+        console.log("Your last name is too short")
+        return false;
     }
     if (email.value === "") {
         email.focus();
         console.log("Please enter your email")
+        return false;
     }
     else if (!(email.value.match(emailPattern))) {
         email.focus();
@@ -33,15 +47,21 @@ function signUp() {
     if (password.value === "") {
         password.focus();
         console.log("Please enter your password")
+        return false;
     }
     else if (password.value.length < 8) {
+        password.focus();
         console.log("Your password must be at least 8 characters")
+        return false;
     }
     else if (password.value.length > 25) {
+        password.focus();
         console.log("Your password must be at max 25 characters")
+        return false;
     }
 
-    if (gender.selectedIndex === 0) {
+    if (gender.value.length < 4 || gender.value.length > 6) {
+        gender.focus();
         console.log("Please select your gender")
         return false;
     }
@@ -65,7 +85,7 @@ function signUp() {
             }
 
             else {
-                userAccounts.push({ "name": name.value, "email": email.value, "password": password.value, "gender": gender.options[gender.selectedIndex].value })
+                userAccounts.push({ "firstName": lastName.value, "lastName": last.value, "email": email.value, "password": password.value, "gender": gender.value })
 
                 setItem()
 

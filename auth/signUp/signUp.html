@@ -12,20 +12,21 @@
 <body>
 
     <div id="signUp_form_div">
-        <p id="create_account_heading">Create new Account</p>
+        <p id="create_account_heading">Create Account</p>
 
-        <input id="name" type="text" placeholder="Your name" />
+        <input class="input_fields" id="first_name" type="text" placeholder="First name" />
         <br>
-        <input id="email" type="text" placeholder="Your email" />
+        <input class="input_fields" id="last_name" type="text" placeholder="Last name" />
         <br>
-        <select id="gender">
-            <option value="" selected="selected">
-                Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-        </select>
+        <input id="gender" class="input_fields" placeholder="Gender" list="gender_list">
+        <datalist id="gender_list">
+            <option value="Male">
+            <option value="Female">
+        </datalist>
         <br>
-        <input id="password" type="text" placeholder="Your password" />
+        <input class="input_fields" id="email" type="text" placeholder="Your email" />
+        <br>
+        <input class="input_fields" id="password" type="text" placeholder="Your password" />
         <br>
 
         <button onclick="signUp()">Sign Up</button>
