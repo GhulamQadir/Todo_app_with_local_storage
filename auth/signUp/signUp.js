@@ -120,7 +120,7 @@ signUp = () => {
             }
 
             else {
-                userAccounts.push({ "firstName": lastName.value, "lastName": lastName.value, "email": email.value, "password": password.value, "gender": gender.value })
+                userAccounts.push({ "firstName": firstName.value, "lastName": lastName.value, "email": email.value, "password": password.value, "gender": gender.value })
 
                 setItem()
 
