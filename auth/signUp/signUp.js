@@ -7,18 +7,14 @@ var errorMessage = document.getElementById('error_message')
 
 closeErrorAlert = () => {
     alertErrorDiv.style.opacity = "0"
-
     setTimeout(() => {
+        alertErrorDiv.style.opacity = "1"
         alertErrorDiv.style.display = "none"
     }, 600)
 
 }
 
-// closeAlertDiv = () => {
-//     setTimeout(() => {
-//         closeErrorAlert()
-//     }, 6000)
-// }
+
 
 signUp = () => {
     var firstName = document.getElementById('first_name')
@@ -57,7 +53,14 @@ signUp = () => {
         console.log("Your last name is too short")
         alertErrorDiv.style.display = "block"
         errorMessage.innerHTML = "Your last name is too short"
+        return;
+    }
 
+    if (gender.value.length < 4 || gender.value.length > 6) {
+        gender.focus();
+        console.log("Please select your gender")
+        alertErrorDiv.style.display = "block"
+        errorMessage.innerHTML = "Please select your gender"
         return;
     }
     if (email.value === "") {
@@ -91,14 +94,6 @@ signUp = () => {
         console.log("Your password must be at max 25 characters")
         alertErrorDiv.style.display = "block"
         errorMessage.innerHTML = "Your password must be at max 25 characters"
-        return;
-    }
-
-    if (gender.value.length < 4 || gender.value.length > 6) {
-        gender.focus();
-        console.log("Please select your gender")
-        alertErrorDiv.style.display = "block"
-        errorMessage.innerHTML = "Please select your gender"
         return;
     }
 

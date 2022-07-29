@@ -19,6 +19,12 @@ body {
     padding: 7px 2px 20px 2px !important;
 }
 
+@media screen and (max-width: 850px) {
+    #signUp_form_div {
+        width: 80%;
+    }
+}
+
 #create_account_heading {
     padding-top: 20px;
     font-size: 30px;
@@ -38,7 +44,16 @@ body {
     background: none;
     border-bottom: 1px solid white;
     color: white;
+    font-size: 16px;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px rgb(19, 0, 87) inset;
+    box-shadow: 0 0 0 50px rgb(19, 0, 87) inset;
+    -webkit-text-fill-color: white;
+}
+
 
 ::placeholder {
     color: white;
@@ -82,8 +97,24 @@ input:focus {
 
 
 #signUp_btn {
-    margin: 15px 5px 10px 5px;
+    margin: 6px 5px 10px 5px;
     padding: 7px 30px 8px 30px;
     border-radius: 45px;
     font-weight: 700;
+    border: none;
+}
+
+#signUp_btn:hover {
+    background-color: rgb(224, 224, 238);
+    transition: all;
+}
+
+#already_have_an_account {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#login_link {
+    color: white;
+    font-size: 16px;
 }
