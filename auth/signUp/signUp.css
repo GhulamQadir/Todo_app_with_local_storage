@@ -52,7 +52,7 @@ body {
 }
 
 /* input fields styling */
-.input_fields {
+input {
     height: 30px;
     width: 43%;
     margin-bottom: 20px;
@@ -92,7 +92,7 @@ input:focus {
 /* responsiveness of input fields and gender */
 @media screen and (max-width: 900px) {
 
-    .input_fields,
+    input,
     #gender {
         width: 50%;
 
@@ -101,7 +101,7 @@ input:focus {
 
 @media screen and (max-width: 500px) {
 
-    .input_fields,
+    input,
     #gender {
         width: 55%;
 
@@ -110,7 +110,7 @@ input:focus {
 
 @media screen and (max-width: 390px) {
 
-    .input_fields,
+    input,
     #gender {
         width: 60%;
 
