@@ -1,0 +1,74 @@
+/* whole body color */
+body {
+    background-color: rgb(215, 219, 220);
+}
+
+
+/* Login form div styling*/
+#login_form_div {
+    margin: auto;
+    width: 40%;
+    box-shadow: 0px 0px 3px 1px gray;
+    text-align: center;
+    background-color: rgb(19, 0, 87);
+    color: white;
+    box-shadow: 2;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    padding: 7px 2px 20px 2px !important;
+}
+
+
+/* login heading */
+#login_heading {
+    margin-top: 30px;
+    margin-bottom: 35px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+
+
+/* input fields styling */
+input {
+    height: 30px;
+    width: 43%;
+    margin-bottom: 20px;
+    border: 0px;
+    background: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 18px;
+}
+
+
+/* autofill input fields styling */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px rgb(19, 0, 87) inset;
+    box-shadow: 0 0 0 50px rgb(19, 0, 87) inset;
+    -webkit-text-fill-color: white;
+}
+
+/* placeholder styling */
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+/* input on focus styling */
+input:focus {
+    outline: none;
+}
+
+
+#show_password_div {
+    width: 77%;
+    text-align: center;
+}
+
+#checkBox {
+    height: 17px !important;
+    width: 20px;
+}
