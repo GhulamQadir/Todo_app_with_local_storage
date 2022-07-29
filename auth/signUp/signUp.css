@@ -1,12 +1,10 @@
+/* whole body color */
 body {
-    /* background-image: url('https://www.xmple.com/wallpaper/gradient-white-blue-linear-3000x4500-c2-ffffff-b0c4de-a-315-f-14.svg'); */
     background-color: rgb(215, 219, 220);
-    /* background-repeat: no-repeat;
-    background-size: 100% 100%;
-    position: relative; */
 }
 
 
+/* Sign Up form div styling*/
 #signUp_form_div {
     margin: auto;
     width: 40%;
@@ -22,21 +20,38 @@ body {
 
 @media screen and (max-width: 850px) {
     #signUp_form_div {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #signUp_form_div {
         width: 80%;
     }
 }
 
+@media screen and (max-width: 450px) {
+    #signUp_form_div {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #signUp_form_div {
+        width: 90%;
+    }
+}
+
+/* Create account heading */
 #create_account_heading {
-    padding-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 35px;
     font-size: 30px;
     font-weight: 600;
     font-family: sans-serif;
 }
 
-#gender {
-    width: 43%;
-}
-
+/* input fields styling */
 .input_fields {
     height: 30px;
     width: 43%;
@@ -48,6 +63,12 @@ body {
     font-size: 16px;
 }
 
+/* gender field */
+#gender {
+    width: 43%;
+}
+
+/* autofill input fields styling */
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0 50px rgb(19, 0, 87) inset;
@@ -55,15 +76,50 @@ input:-webkit-autofill:focus {
     -webkit-text-fill-color: white;
 }
 
-
+/* placeholder styling */
 ::placeholder {
     color: white;
     opacity: 1;
 }
 
+/* input on focus styling */
 input:focus {
     outline: none;
 }
+
+
+
+/* responsiveness of input fields and gender */
+@media screen and (max-width: 900px) {
+
+    .input_fields,
+    #gender {
+        width: 50%;
+
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .input_fields,
+    #gender {
+        width: 55%;
+
+    }
+}
+
+@media screen and (max-width: 390px) {
+
+    .input_fields,
+    #gender {
+        width: 60%;
+
+    }
+}
+
+/* end here */
+
+
 
 /* alert box styling */
 #alert {
@@ -97,6 +153,7 @@ input:focus {
 
 
 
+/* Sign Up button styling */
 #signUp_btn {
     margin: 6px 5px 10px 5px;
     padding: 7px 30px 8px 30px;
@@ -110,12 +167,17 @@ input:focus {
     transition: all;
 }
 
+
+/* already have an account(last line) styling */
 #already_have_an_account {
     font-size: 14px;
     margin-top: 5px;
 }
 
+/* Login link styling */
 #login_link {
     color: white;
     font-size: 16px;
 }
+
+/* END */
