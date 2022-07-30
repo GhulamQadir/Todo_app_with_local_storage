@@ -18,9 +18,9 @@
         </div>
 
         <p id="create_account_heading">Create Account</p>
-        <input id="first_name" type="text" placeholder="First name">
+        <input id="first_name" type="name" placeholder="First name">
         <br>
-        <input id="last_name" type="text" placeholder="Last name">
+        <input id="last_name" type="name" placeholder="Last name">
         <br>
         <input id="gender" placeholder="Gender" list="gender_list">
         <datalist id="gender_list">
@@ -28,10 +28,15 @@
             <option value="Female">
         </datalist>
         <br>
-        <input id="email" type="text" placeholder="Email">
+        <input id="email" type="email" placeholder="Email">
         <br>
-        <input id="password" type="text" placeholder="Password">
+        <input id="password" type="password" placeholder="Password">
         <br>
+        <div id="show_password_div">
+            <input id="checkBox" type="checkbox" onclick="showAndHidePassword()"><span id="show_password_text">Show
+                Password</span>
+            <br>
+        </div>
 
         <button id="signUp_btn" onclick="signUp()">Sign Up</button>
 

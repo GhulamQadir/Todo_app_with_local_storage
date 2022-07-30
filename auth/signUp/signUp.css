@@ -55,7 +55,7 @@ body {
 input {
     height: 30px;
     width: 43%;
-    margin-bottom: 20px;
+    margin-top: 20px;
     border: 0px;
     background: none;
     border-bottom: 1px solid white;
@@ -150,6 +150,22 @@ input:focus {
 }
 
 /* end */
+
+
+#show_password_div {
+    width: 78%;
+    margin-bottom: 16px;
+}
+
+#checkBox {
+    height: 13px !important;
+    width: 15px;
+}
+
+#show_password_text {
+    padding-left: 4px;
+    font-size: 13px;
+}
 
 
 

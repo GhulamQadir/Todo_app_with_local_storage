@@ -145,3 +145,14 @@ function getItem() {
     }
 }
 getItem()
+
+
+
+function showAndHidePassword() {
+    var getPassword = document.getElementById("password");
+    if (getPassword.type === "password") {
+        getPassword.type = "text";
+    } else {
+        getPassword.type = "password";
+    }
+}
