@@ -3,23 +3,42 @@ var getUser = JSON.parse(localStorage.getItem('userAccounts'))
 
 userAccounts = getUser
 
+
+
+var alertErrorDiv = document.getElementById('alert')
+var closeAlertBtn = document.getElementById('closebtn')
+var errorMessage = document.getElementById('error_message')
+
+
+closeErrorAlert = () => {
+    alertErrorDiv.style.opacity = "0"
+    setTimeout(() => {
+        alertErrorDiv.style.opacity = "1"
+        alertErrorDiv.style.display = "none"
+    }, 600)
+
+}
+
 function login() {
     var email = document.getElementById('email')
     var password = document.getElementById('password')
 
-    var emailPattern = /^[\w\-\.\+]+\@[a-zA-Z0-9\. \-]+\.[a-zA-z0-9]{2,4}$/;
 
     if (email.value === "") {
-        console.log("Please enter your email address")
-    }
-    else if (!(email.value.match(emailPattern))) {
         email.focus();
-        console.log("Please enter your valid email address")
-        return false;
+        console.log("Please enter your email address")
+        alertErrorDiv.style.display = "block"
+        errorMessage.innerHTML = "Please enter your email address"
+        return;
     }
 
+
     if (password.value === "") {
+        password.focus();
         console.log("Please enter your password")
+        alertErrorDiv.style.display = "block"
+        errorMessage.innerHTML = "Please enter your password"
+        return;
     }
 
     else {
@@ -41,10 +60,17 @@ function login() {
             }
         }
         if (emailMatch === false) {
-            console.log("user not found")
+            console.log("User not found")
+            alertErrorDiv.style.display = "block"
+            errorMessage.innerHTML = "User not found"
+            return;
         }
         if (emailMatch === true && passwordMatch === false) {
-            console.log("Invalid password")
+            password.focus()
+            console.log("The password is invalid or the user does not have a password")
+            alertErrorDiv.style.display = "block"
+            errorMessage.innerHTML = "The password is invalid or the user does not have a password"
+            return;
         }
 
     }

@@ -11,9 +11,15 @@
 
 <body>
     <div id="login_form_div">
+
+        <div id="alert">
+            <span id="closebtn" onclick="closeErrorAlert()">&times;</span>
+            <span id="error_message"></span>
+        </div>
+
         <p id="login_heading">Login</p>
 
-        <input id="email" type="text" placeholder="Email" />
+        <input id="email" type="email" placeholder="Email" />
         <br>
         <input id="password" type="password" placeholder="Password" />
         <br>
