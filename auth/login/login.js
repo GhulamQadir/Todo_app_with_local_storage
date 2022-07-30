@@ -8,6 +8,7 @@ userAccounts = getUser
 var alertErrorDiv = document.getElementById('alert')
 var closeAlertBtn = document.getElementById('closebtn')
 var errorMessage = document.getElementById('error_message')
+var loader = document.getElementById('loader')
 
 
 closeErrorAlert = () => {
@@ -52,17 +53,28 @@ function login() {
 
                 if (password.value === userAccounts[i].password) {
                     passwordMatch = true
-                    localStorage.setItem('loggedInUser', JSON.stringify({ "email": email.value, "password": password.value }))
-                    console.log("matched")
-                    window.location.replace('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/home/home.html')
+
+                    loader.style.display = "block"
+
+                    setTimeout(() => {
+                        loader.style.display = "none"
+                        localStorage.setItem('loggedInUser', JSON.stringify({ "email": email.value, "password": password.value }))
+                        console.log("matched")
+                        window.location.replace('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/home/home.html')
+                    }, 2000)
                 }
 
             }
         }
         if (emailMatch === false) {
-            console.log("User not found")
-            alertErrorDiv.style.display = "block"
-            errorMessage.innerHTML = "User not found"
+            loader.style.display = "block"
+
+            setTimeout(() => {
+                loader.style.display = "none"
+                alertErrorDiv.style.display = "block"
+                errorMessage.innerHTML = "User not found"
+
+            }, 2000)
             return;
         }
         if (emailMatch === true && passwordMatch === false) {
