@@ -1,5 +1,9 @@
 var getUser = JSON.parse(localStorage.getItem('userAccounts'))
 var getLoggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
+var edit = document.getElementById('edit_todo')
+var editModal = document.getElementById('edit_modal')
+let currentArrayIndex;
+let innerVal;
 
 
 var userAccounts = getUser
@@ -121,40 +125,40 @@ function getTodosFromLocalStor() {
 
 
 function deleteTodo(e) {
-    e.parentNode.remove()
+    e.parentNode.remove();
     for (var i = 0; i < toDosArray.length; i++) {
         if (toDosArray[i] === e.parentNode.firstChild.innerHTML) {
             toDosArray.splice(i, 1);
         }
     }
     console.log(toDosArray)
-    
+
+
 
     // setting new todos array in local storage
     getInfo.todos = toDosArray
     localStorage.setItem('userAccounts', JSON.stringify(userAccounts))
 }
 
-var testing = ""
-var edit = document.getElementById('edit_todo')
-var editModal = document.getElementById('edit_modal')
+
 function editTodo(e) {
     editModal.style.display = "block"
     for (var i = 0; i < toDosArray.length; i++) {
         if (toDosArray[i] === e.parentNode.firstChild.innerHTML) {
-            testing = i
+            currentArrayIndex = i
             edit.value = toDosArray[i]
+            innerVal = e
 
 
         }
     }
     console.log(toDosArray)
 
-    // setting new todos array in local storage
 }
 
 editValue = () => {
-    toDosArray.splice(testing, 1, edit.value);
+    toDosArray.splice(currentArrayIndex, 1, edit.value);
+    innerVal.parentNode.firstChild.innerHTML = edit.value
     getInfo.todos = toDosArray
     localStorage.setItem('userAccounts', JSON.stringify(userAccounts))
     editModal.style.display = "none"
