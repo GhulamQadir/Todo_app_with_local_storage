@@ -1,9 +1,12 @@
 
 var userAccounts = []
 
+var signUpFormDiv = document.getElementById('signUp_form_div')
 var alertErrorDiv = document.getElementById('alert')
 var closeAlertBtn = document.getElementById('closebtn')
 var errorMessage = document.getElementById('error_message')
+var loader = document.getElementById('loader')
+
 
 closeErrorAlert = () => {
     alertErrorDiv.style.opacity = "0"
@@ -102,10 +105,18 @@ signUp = () => {
         var emailMatch = false;
         for (var i = 0; i < userAccounts.length; i++) {
             if (email.value === userAccounts[i].email) {
-                console.log("The email address is already in use by another account")
-                alertErrorDiv.style.display = "block"
-                errorMessage.innerHTML = "The email address is already in use by another account"
-                emailMatch = true
+                signUpFormDiv.style.pointerEvents = "none"
+                loader.style.display = "block"
+                document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
+                setTimeout(() => {
+                    signUpFormDiv.style.pointerEvents = "auto"
+                    document.body.style.backgroundColor = "rgb(215, 219, 220)"
+                    loader.style.display = "none"
+                    alertErrorDiv.style.display = "block"
+                    errorMessage.innerHTML = "The email address is already in use by another account"
+                    email.focus()
+                }, 2000)
+                return;
             }
         }
 
@@ -120,11 +131,19 @@ signUp = () => {
             }
 
             else {
-                userAccounts.push({ "firstName": firstName.value, "lastName": lastName.value, "email": email.value, "password": password.value, "gender": gender.value })
 
-                setItem()
+                signUpFormDiv.style.pointerEvents = "none"
+                loader.style.display = "block"
+                document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
+                setTimeout(() => {
+                    signUpFormDiv.style.pointerEvents = "auto"
+                    document.body.style.backgroundColor = "rgb(215, 219, 220)"
+                    loader.style.display = "none"
 
-                window.location.replace('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/auth/login/login.html')
+                    userAccounts.push({ "firstName": firstName.value, "lastName": lastName.value, "email": email.value, "password": password.value, "gender": gender.value })
+                    setItem()
+                    window.location.replace('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/auth/login/login.html')
+                }, 2000)
 
             }
         }
