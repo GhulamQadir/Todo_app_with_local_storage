@@ -6,3 +6,34 @@
     margin-left: 10px;
     margin-bottom: 15px;
 }
+
+
+
+
+
+
+
+/* ERRORS MODAL styling start */
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Black w/ opacity */
+}
+
+/* ERRORS Modal Content */
+.modal-content {
+    position: relative;
+    /* background-color: #bf3b32; */
+    color: white;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 40%;
+
+}

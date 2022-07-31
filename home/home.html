@@ -10,6 +10,14 @@
 
 <body onload="getTodosFromLocalStor()">
 
+    <div id="edit_modal" class="modal">
+        <div class="modal-content">
+            <span class="close_modal_btn" onclick="closeModal()">&times;</span>
+            <input id="edit_todo" type="text" />
+            <br>
+            <button onclick="editValue(this)">Edit</button>
+        </div>
+    </div>
 
     <div id="userInfo">
 

@@ -21,7 +21,7 @@ for (var i = 0; i < userAccounts.length; i++) {
 
 var userInfo = document.getElementById('userInfo')
 var userName = document.createElement('h1')
-var userNameText = document.createTextNode(`Hi, ${getInfo.name}`)
+var userNameText = document.createTextNode(`Hi, ${getInfo.firstName}`)
 userName.style.display = "inline"
 userName.appendChild(userNameText)
 userInfo.appendChild(userName)
@@ -56,6 +56,8 @@ function addTodo() {
         localStorage.setItem('userAccounts', JSON.stringify(userAccounts))
 
 
+
+
         // fetching todos
         var separateTodo = document.createElement('todo')
         var todoPara = document.createElement('p')
@@ -69,6 +71,13 @@ function addTodo() {
         delBtn.appendChild(delBtnText)
         delBtn.setAttribute('onclick', 'deleteTodo(this)')
         separateTodo.appendChild(delBtn)
+
+
+        var editBtn = document.createElement('button')
+        var editBtnText = document.createTextNode('Edit')
+        editBtn.appendChild(editBtnText)
+        editBtn.setAttribute('onclick', 'editTodo(this)')
+        separateTodo.appendChild(editBtn)
 
         var lineBreak = document.createElement('br')
         separateTodo.appendChild(lineBreak)
@@ -96,6 +105,12 @@ function getTodosFromLocalStor() {
         delBtn.setAttribute('onclick', 'deleteTodo(this)')
         separateTodo.appendChild(delBtn)
 
+        var editBtn = document.createElement('button')
+        var editBtnText = document.createTextNode('Edit')
+        editBtn.appendChild(editBtnText)
+        editBtn.setAttribute('onclick', 'editTodo(this)')
+        separateTodo.appendChild(editBtn)
+
         var lineBreak = document.createElement('br')
         separateTodo.appendChild(lineBreak)
 
@@ -113,10 +128,36 @@ function deleteTodo(e) {
         }
     }
     console.log(toDosArray)
+    
 
     // setting new todos array in local storage
     getInfo.todos = toDosArray
     localStorage.setItem('userAccounts', JSON.stringify(userAccounts))
+}
+
+var testing = ""
+var edit = document.getElementById('edit_todo')
+var editModal = document.getElementById('edit_modal')
+function editTodo(e) {
+    editModal.style.display = "block"
+    for (var i = 0; i < toDosArray.length; i++) {
+        if (toDosArray[i] === e.parentNode.firstChild.innerHTML) {
+            testing = i
+            edit.value = toDosArray[i]
+
+
+        }
+    }
+    console.log(toDosArray)
+
+    // setting new todos array in local storage
+}
+
+editValue = () => {
+    toDosArray.splice(testing, 1, edit.value);
+    getInfo.todos = toDosArray
+    localStorage.setItem('userAccounts', JSON.stringify(userAccounts))
+    editModal.style.display = "none"
 }
 
 
