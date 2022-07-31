@@ -5,6 +5,7 @@ userAccounts = getUser
 
 
 
+var loginFormDiv = document.getElementById('login_form_div')
 var alertErrorDiv = document.getElementById('alert')
 var closeAlertBtn = document.getElementById('closebtn')
 var errorMessage = document.getElementById('error_message')
@@ -54,10 +55,14 @@ function login() {
                 if (password.value === userAccounts[i].password) {
                     passwordMatch = true
 
-                    loader.style.display = "block"
 
+                    loginFormDiv.style.pointerEvents = "none"
+                    loader.style.display = "block"
+                    document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
                     setTimeout(() => {
+                        loginFormDiv.style.pointerEvents = "auto"
                         loader.style.display = "none"
+                        document.body.style.backgroundColor = "rgb(215, 219, 220)"
                         localStorage.setItem('loggedInUser', JSON.stringify({ "email": email.value, "password": password.value }))
                         console.log("matched")
                         window.location.replace('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/home/home.html')
@@ -67,21 +72,32 @@ function login() {
             }
         }
         if (emailMatch === false) {
+            loginFormDiv.style.pointerEvents = "none"
             loader.style.display = "block"
-
+            document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
             setTimeout(() => {
+                loginFormDiv.style.pointerEvents = "auto"
+                document.body.style.backgroundColor = "rgb(215, 219, 220)"
                 loader.style.display = "none"
                 alertErrorDiv.style.display = "block"
                 errorMessage.innerHTML = "User not found"
+                email.focus()
 
             }, 2000)
             return;
         }
         if (emailMatch === true && passwordMatch === false) {
-            password.focus()
-            console.log("The password is invalid or the user does not have a password")
-            alertErrorDiv.style.display = "block"
-            errorMessage.innerHTML = "The password is invalid or the user does not have a password"
+            loginFormDiv.style.pointerEvents = "none"
+            loader.style.display = "block"
+            document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
+            setTimeout(() => {
+                loginFormDiv.style.pointerEvents = "auto"
+                document.body.style.backgroundColor = "rgb(215, 219, 220)"
+                loader.style.display = "none"
+                alertErrorDiv.style.display = "block"
+                errorMessage.innerHTML = "The password is invalid or the user does not have a password"
+                password.focus()
+            }, 2000)
             return;
         }
 
