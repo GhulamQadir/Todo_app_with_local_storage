@@ -18,6 +18,39 @@ body {
     padding: 7px 2px 20px 2px !important;
 }
 
+@media screen and (max-width: 850px) {
+    #login_form_div {
+        width: 70%;
+    }
+
+    #show_password_div {
+        width: 40%;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    #login_form_div {
+        width: 80%;
+    }
+
+    #show_password_div {
+        width: 85% !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #login_form_div {
+        width: 90%;
+    }
+
+    #show_password_div {
+        width: 90% !important;
+    }
+}
+
+
+
 
 /* login heading */
 #login_heading {
@@ -55,9 +88,7 @@ input {
     transition: all;
 }
 
-#checkBox {
-    margin: 20px 3px 40px 4px;
-}
+
 
 /* autofill input fields styling */
 input:-webkit-autofill,
@@ -84,9 +115,17 @@ input:focus {
     text-align: center;
 }
 
-#checkBox {
+#show_password_box {
     height: 17px !important;
     width: 20px;
+    margin: 20px 3px 40px 4px;
+
+}
+
+@media screen and (max-width: 1200px) {
+    #show_password_div {
+        width: 84% !important;
+    }
 }
 
 
