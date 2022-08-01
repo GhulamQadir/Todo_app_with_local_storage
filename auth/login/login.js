@@ -65,7 +65,7 @@ function login() {
                         document.body.style.backgroundColor = "rgb(215, 219, 220)"
                         localStorage.setItem('loggedInUser', JSON.stringify({ "email": email.value, "password": password.value }))
                         console.log("matched")
-                        window.location.replace('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/home/home.html')
+                        window.location.replace('../../home/home.html')
                     }, 2000)
                 }
 

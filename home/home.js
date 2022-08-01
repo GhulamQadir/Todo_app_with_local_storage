@@ -178,5 +178,5 @@ getTodos()
 
 function logOut() {
     localStorage.removeItem('loggedInUser')
-    window.location.replace('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/auth/login/login.html')
+    window.location.replace('../auth/login/login.html')
 }

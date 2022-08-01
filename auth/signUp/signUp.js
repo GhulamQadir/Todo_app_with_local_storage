@@ -142,7 +142,7 @@ signUp = () => {
 
                     userAccounts.push({ "firstName": firstName.value, "lastName": lastName.value, "email": email.value, "password": password.value, "gender": gender.value })
                     setItem()
-                    window.location.replace('file:///C:/Users/abdulqadir/Desktop/JS%20todo-app/auth/login/login.html')
+                    window.location.replace('../login/login.html')
                 }, 2000)
 
             }
