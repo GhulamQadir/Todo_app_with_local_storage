@@ -40,7 +40,7 @@
 
 
 .navbar {
-    background-color: blue !important;
+    /* height: 70px; */
 }
 
 #nav_toggle_btn {
@@ -49,4 +49,29 @@
 
 .collapse {
     float: right;
+}
+
+.chevron {
+    height: 20px;
+    color: grey;
+}
+
+#user_avatar_nav {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.chevron_icons {
+    cursor: pointer;
+    color: grey;
+    height: 3px !important;
+    /* width: ; */
+    /* display: none; */
+
+}
+
+#chevron_up {
+    display: none;
 }

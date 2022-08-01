@@ -39,7 +39,7 @@ userAvatar.setAttribute('src', avatarImg)
 userAvatar.setAttribute('id', 'user_avatar')
 userInfo.appendChild(userAvatar)
 
-var setuserAvatar = document.getElementById('user_avatar')
+var setuserAvatar = document.getElementById('user_avatar_nav')
 setuserAvatar.src = avatarImg
 
 
@@ -182,4 +182,19 @@ getTodos()
 function logOut() {
     localStorage.removeItem('loggedInUser')
     window.location.replace('../auth/login/login.html')
+}
+
+
+
+var chevronUpIcon = document.getElementById('chevron_up')
+var chevronDownIcon = document.getElementById('chevron_down')
+
+chevronUp = () => {
+    chevronUpIcon.style.display = "block"
+    chevronDownIcon.style.display = "none"
+}
+
+chevronDown = () => {
+    chevronDownIcon.style.display = "block"
+    chevronUpIcon.style.display = "none"
 }
