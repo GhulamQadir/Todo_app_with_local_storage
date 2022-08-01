@@ -37,3 +37,16 @@
     width: 40%;
 
 }
+
+
+.navbar {
+    background-color: blue !important;
+}
+
+#nav_toggle_btn {
+    color: white !important;
+}
+
+.collapse {
+    float: right;
+}

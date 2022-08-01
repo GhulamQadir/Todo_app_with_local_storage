@@ -39,6 +39,9 @@ userAvatar.setAttribute('src', avatarImg)
 userAvatar.setAttribute('id', 'user_avatar')
 userInfo.appendChild(userAvatar)
 
+var setuserAvatar = document.getElementById('user_avatar')
+setuserAvatar.src = avatarImg
+
 
 
 console.log(getInfo)
