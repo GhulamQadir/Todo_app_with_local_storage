@@ -23,13 +23,14 @@ for (var i = 0; i < userAccounts.length; i++) {
     }
 }
 
+var profileUserName = document.getElementById('profile_userName')
 var userInfo = document.getElementById('userInfo')
 var userName = document.createElement('h1')
 var userNameText = document.createTextNode(`Hi, ${getInfo.firstName}`)
 userName.style.display = "inline"
 userName.appendChild(userNameText)
 userInfo.appendChild(userName)
-
+profileUserName.innerHTML += `${getInfo.firstName} ${getInfo.lastName}`
 
 
 var avatar = ""
@@ -39,8 +40,10 @@ userAvatar.setAttribute('src', avatarImg)
 userAvatar.setAttribute('id', 'user_avatar')
 userInfo.appendChild(userAvatar)
 
-var setuserAvatar = document.getElementById('user_avatar_nav')
+var setuserAvatar = document.getElementById('user_profile_dropdown')
+var userProfileImg = document.getElementById('user_profile_img')
 setuserAvatar.src = avatarImg
+userProfileImg.src = avatarImg
 
 
 
@@ -95,13 +98,13 @@ function addTodo() {
     }
 }
 
-function getTodosFromLocalStor(array) {
-    for (var i in array) {
+function getTodosFromLocalStor() {
+    for (var i in toDosArray) {
 
         var separateTodo = document.createElement('todo')
         var todoPara = document.createElement('p')
         todoPara.style.display = "inline"
-        var todoText = document.createTextNode(array[i])
+        var todoText = document.createTextNode(toDosArray[i])
         todoPara.appendChild(todoText)
         separateTodo.appendChild(todoPara)
 
@@ -124,7 +127,9 @@ function getTodosFromLocalStor(array) {
 
     }
 }
-
+window.onload = () => {
+    getTodosFromLocalStor()
+}
 
 function deleteTodo(e) {
     e.parentNode.remove();
@@ -200,25 +205,40 @@ chevronDown = () => {
 
 
 searchTodo = () => {
-
-    var filteredData;
-
-    let searchModal = document.getElementById('search_modal')
-    let searchModalContent = document.getElementById('search_modal_content')
     let search = document.getElementById('search_todo').value
     console.log(`Value: ${search}`)
-
-
     let filter = toDosArray.filter(a => {
         return a.includes(search)
 
     })
-    filteredData = filter
-    console.log(filteredData)
+    console.log(filter)
+    for (var i = 0; i < filter.length; i++) {
+        var separateTodo = document.createElement('todo')
+        var todoPara = document.createElement('p')
+        todoPara.style.display = "inline"
+        var todoText = document.createTextNode(filter[i])
+        todoPara.appendChild(todoText)
+        separateTodo.appendChild(todoPara)
 
-    getTodosFromLocalStor(filteredData)
+        var delBtn = document.createElement('button')
+        var delBtnText = document.createTextNode('Delete')
+        delBtn.appendChild(delBtnText)
+        delBtn.setAttribute('onclick', 'deleteTodo(this)')
+        separateTodo.appendChild(delBtn)
 
-    filteredData = ""
+        var editBtn = document.createElement('button')
+        var editBtnText = document.createTextNode('Edit')
+        editBtn.appendChild(editBtnText)
+        editBtn.setAttribute('onclick', 'editTodo(this)')
+        separateTodo.appendChild(editBtn)
 
+        var lineBreak = document.createElement('br')
+        separateTodo.appendChild(lineBreak)
+
+        todosDiv.appendChild(separateTodo)
+    }
+}
+
+openUserProfileModal = () => {
 
 }
