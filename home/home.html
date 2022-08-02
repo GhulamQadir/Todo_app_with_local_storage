@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body onload="getTodosFromLocalStor()">
+<body onload="getTodosFromLocalStor(toDosArray)">
 
     <div id="edit_modal" class="modal">
         <div class="modal-content">
@@ -39,7 +39,7 @@
                 </li> -->
                 <!-- <input type="text" id="search_todo" placeholder="Search todo"> -->
                 <input id="search_todo" class="form-control mr-sm-2" type="search" placeholder="Search"
-                    oninput="searchTodo()" aria-label="Search">
+                    onkeyup="searchTodo()" aria-label="Search">
 
             </ul>
             <img id="user_avatar_nav" src="" alt="">

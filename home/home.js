@@ -95,13 +95,13 @@ function addTodo() {
     }
 }
 
-function getTodosFromLocalStor() {
-    for (var i in toDosArray) {
+function getTodosFromLocalStor(array) {
+    for (var i in array) {
 
         var separateTodo = document.createElement('todo')
         var todoPara = document.createElement('p')
         todoPara.style.display = "inline"
-        var todoText = document.createTextNode(toDosArray[i])
+        var todoText = document.createTextNode(array[i])
         todoPara.appendChild(todoText)
         separateTodo.appendChild(todoPara)
 
@@ -200,34 +200,25 @@ chevronDown = () => {
 
 
 searchTodo = () => {
+
+    var filteredData;
+
     let searchModal = document.getElementById('search_modal')
     let searchModalContent = document.getElementById('search_modal_content')
     let search = document.getElementById('search_todo').value
-
-    window.onclick = () => {
-        searchModal.style.display = "none"
-    }
-    if (search.length === 0) {
-        searchModal.style.display = "none"
-        return;
-    }
+    console.log(`Value: ${search}`)
 
 
     let filter = toDosArray.filter(a => {
         return a.includes(search)
 
     })
-    console.log(filter.length)
-    searchModal.style.display = "block"
-    if (filter.length === 0) {
-        searchModal.style.display = "none"
-    }
-    for (var i = 0; i < filter.length; i++) {
-        let relatedTodos = document.createElement('h3')
-        relatedTodos.setAttribute('id', 'related_todos')
-        let relatedTodosText = document.createTextNode(filter[i])
-        relatedTodos.appendChild(relatedTodosText)
-        searchModalContent.appendChild(relatedTodos)
+    filteredData = filter
+    console.log(filteredData)
 
-    }
+    getTodosFromLocalStor(filteredData)
+
+    filteredData = ""
+
+
 }
