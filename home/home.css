@@ -23,6 +23,7 @@
     width: 100%;
     height: 100%;
     overflow: auto;
+    top: 200px;
     /* Black w/ opacity */
 }
 
@@ -34,8 +35,29 @@
     margin: auto;
     padding: 10px;
     border: 1px solid #888;
-    width: 40%;
+    width: 40% !important;
+}
 
+#search_modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    top: -45px;
+}
+
+.search_modal_content {
+    position: relative;
+    color: white;
+    /* margin: auto; */
+    padding: 10px;
+    border: 1px solid #888;
+    width: 30% !important;
+    margin-left: 40px;
+    background-color: aliceblue;
 }
 
 

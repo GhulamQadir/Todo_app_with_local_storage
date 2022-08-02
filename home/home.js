@@ -44,7 +44,6 @@ setuserAvatar.src = avatarImg
 
 
 
-console.log(getInfo)
 
 
 function addTodo() {
@@ -197,4 +196,30 @@ chevronUp = () => {
 chevronDown = () => {
     chevronDownIcon.style.display = "block"
     chevronUpIcon.style.display = "none"
+}
+
+
+searchTodo = () => {
+    var searchModal = document.getElementById('search_modal')
+
+    window.onclick = () => {
+        searchModal.style.display = "none"
+    }
+    let search = document.getElementById('search_todo').value
+    if (search.value === "") {
+        searchModal.style.display = "none"
+    }
+
+
+    let filter = toDosArray.filter(a => {
+        if (a.includes(search)) {
+            searchModal.style.display = "block"
+            
+        }
+        else {
+            searchModal.style.display = "none"
+        }
+        return a.includes(search)
+    })
+    console.log(filter)
 }
