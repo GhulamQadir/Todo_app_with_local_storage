@@ -200,26 +200,34 @@ chevronDown = () => {
 
 
 searchTodo = () => {
-    var searchModal = document.getElementById('search_modal')
+    let searchModal = document.getElementById('search_modal')
+    let searchModalContent = document.getElementById('search_modal_content')
+    let search = document.getElementById('search_todo').value
 
     window.onclick = () => {
         searchModal.style.display = "none"
     }
-    let search = document.getElementById('search_todo').value
-    if (search.value === "") {
+    if (search.length === 0) {
         searchModal.style.display = "none"
+        return;
     }
 
 
     let filter = toDosArray.filter(a => {
-        if (a.includes(search)) {
-            searchModal.style.display = "block"
-            
-        }
-        else {
-            searchModal.style.display = "none"
-        }
         return a.includes(search)
+
     })
-    console.log(filter)
+    console.log(filter.length)
+    searchModal.style.display = "block"
+    if (filter.length === 0) {
+        searchModal.style.display = "none"
+    }
+    for (var i = 0; i < filter.length; i++) {
+        let relatedTodos = document.createElement('h3')
+        relatedTodos.setAttribute('id', 'related_todos')
+        let relatedTodosText = document.createTextNode(filter[i])
+        relatedTodos.appendChild(relatedTodosText)
+        searchModalContent.appendChild(relatedTodos)
+
+    }
 }

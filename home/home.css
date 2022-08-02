@@ -89,11 +89,14 @@
     cursor: pointer;
     color: grey;
     height: 3px !important;
-    /* width: ; */
-    /* display: none; */
-
 }
 
 #chevron_up {
     display: none;
+    cursor: pointer;
+}
+
+
+#related_todos {
+    color: black;
 }
