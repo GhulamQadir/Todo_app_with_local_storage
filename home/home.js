@@ -24,17 +24,19 @@ for (var i = 0; i < userAccounts.length; i++) {
 }
 
 var profileUserName = document.getElementById('profile_userName')
+let userEmail = document.getElementById('user_email')
 var userInfo = document.getElementById('userInfo')
 var userName = document.createElement('h1')
 var userNameText = document.createTextNode(`Hi, ${getInfo.firstName}`)
 userName.style.display = "inline"
 userName.appendChild(userNameText)
 userInfo.appendChild(userName)
-profileUserName.innerHTML += `${getInfo.firstName} ${getInfo.lastName}`
+profileUserName.innerHTML = `${getInfo.firstName} ${getInfo.lastName}`
+userEmail.innerHTML = `${getInfo.email}`
 
 
 var avatar = ""
-var avatarImg = getInfo.gender === "Male" ? avatar = "https://png.pngtree.com/png-vector/20190704/ourmid/pngtree-vector-user-young-boy-avatar-icon-png-image_1538408.jpg" : avatar = "https://cdn.pixabay.com/photo/2016/08/20/05/36/avatar-1606914_1280.png"
+var avatarImg = getInfo.gender === "Male" ? avatar = "https://www.svgrepo.com/show/382106/male-avatar-boy-face-man-user-9.svg" : avatar = "https://cdn.pixabay.com/photo/2016/08/20/05/36/avatar-1606914_1280.png"
 var userAvatar = document.createElement('img')
 userAvatar.setAttribute('src', avatarImg)
 userAvatar.setAttribute('id', 'user_avatar')

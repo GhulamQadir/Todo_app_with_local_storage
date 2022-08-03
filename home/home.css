@@ -64,38 +64,54 @@
 
 
 
-#nav_toggle_btn {
-    color: white !important;
-}
-
-.collapse {
-    float: right;
-}
-
-.chevron {
-    height: 20px;
-    color: grey;
+.dropdown-menu {
+    width: 300px !important;
+    height: 300px !important;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
 }
 
 #user_profile_dropdown,
 #user_profile_img {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     margin-left: 10px;
     margin-right: 20px;
     cursor: pointer;
 }
 
-.chevron_icons {
-    cursor: pointer;
-    color: grey;
-    height: 3px !important;
+
+#user_dropdown_img {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 12px;
+    margin-left: 5px;
 }
 
-#chevron_up {
-    display: none;
-    cursor: pointer;
+#user_name {
+    display: inline-block;
+    margin-top: 9px;
+}
+
+#hello_user {
+    margin-bottom: 1px;
+    font-size: 14px;
+    color: rgb(114, 112, 112);
+}
+
+#profile_userName {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.features {
+    margin: 5px 5px 15px 15px;
+}
+
+.icons {
+    font-size: 18px !important;
+    padding-right: 7px;
 }
 
 #search_todo {
