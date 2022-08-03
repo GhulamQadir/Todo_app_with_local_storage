@@ -12,57 +12,12 @@
 
 
 #my_nav {
-    padding-right: 40px;
+    padding: 15px 40px 15px 40px;
 }
 
-/* ERRORS MODAL styling start */
-/* The Modal (background) */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    top: 200px;
-    /* Black w/ opacity */
+.btn {
+    margin-left: 17px;
 }
-
-/* ERRORS Modal Content */
-.modal-content {
-    position: relative;
-    /* background-color: #bf3b32; */
-    color: white;
-    margin: auto;
-    padding: 10px;
-    border: 1px solid #888;
-    width: 40% !important;
-}
-
-#search_modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    top: -45px;
-}
-
-.search_modal_content {
-    position: relative;
-    color: white;
-    /* margin: auto; */
-    padding: 10px;
-    border: 1px solid #888;
-    width: 30% !important;
-    margin-left: 40px;
-    background-color: aliceblue;
-}
-
-
 
 .dropdown-menu {
     width: 300px !important;
@@ -114,8 +69,26 @@
     padding-right: 7px;
 }
 
-#search_todo {
-    width: 900px;
-    margin-left: 20px;
-    margin-right: 20px;
+
+
+@media screen and (min-width: 1200px) {
+    #search_todo {
+        width: 900px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #search_todo {
+        width: 700px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    #search_todo {
+        margin: 15px 5px 15px 5px;
+    }
 }
