@@ -212,8 +212,9 @@ searchTodo = () => {
 
     })
     console.log(filter)
+    todosDiv.innerHTML = ""
     for (var i = 0; i < filter.length; i++) {
-        var separateTodo = document.createElement('todo')
+        var separateTodo = document.createElement('div')
         var todoPara = document.createElement('p')
         todoPara.style.display = "inline"
         var todoText = document.createTextNode(filter[i])
@@ -239,6 +240,3 @@ searchTodo = () => {
     }
 }
 
-openUserProfileModal = () => {
-
-}
