@@ -36,7 +36,7 @@ userEmail.innerHTML = `${getInfo.email}`
 
 
 var avatar = ""
-var avatarImg = getInfo.gender === "Male" ? avatar = "https://www.svgrepo.com/show/382106/male-avatar-boy-face-man-user-9.svg" : avatar = "https://cdn.pixabay.com/photo/2016/08/20/05/36/avatar-1606914_1280.png"
+var avatarImg = getInfo.gender === "Male" ? avatar = "https://i.pinimg.com/736x/d6/30/8a/d6308a0357b762ee72b49b482f125ef7.jpg" : avatar = "https://cdnb.artstation.com/p/assets/images/images/001/372/641/large/hamada-mabrouk-woman-avatar-hijab-3.jpg?1445282460"
 var userAvatar = document.createElement('img')
 userAvatar.setAttribute('src', avatarImg)
 userAvatar.setAttribute('id', 'user_avatar')
