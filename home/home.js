@@ -49,10 +49,10 @@ userProfileImg.src = avatarImg
 
 
 
+let todo = document.getElementById('todo_field')
 
 
 function addTodo() {
-    var todo = document.getElementById('todo_field')
 
     if (todo.value === "") {
         console.log("Please enter some value")
@@ -242,3 +242,7 @@ searchTodo = () => {
     }
 }
 
+
+addTodoDropdown = () => {
+    todo.focus()
+}

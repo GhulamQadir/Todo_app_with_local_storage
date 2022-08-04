@@ -74,7 +74,7 @@
 
 
 #search_todo {
-    width: 900px !important;
+    width: 800px !important;
     margin-left: 70px;
 }
 
@@ -130,4 +130,8 @@
     font-size: 17px;
     font-weight: 600;
     cursor: pointer;
+}
+
+#my_todos_link {
+    text-decoration: none;
 }

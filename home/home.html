@@ -34,10 +34,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-                <input id="search_todo" class="form-control mr-sm-2" type="search" placeholder="Search"
+                <input id="search_todo" class="form-control mr-sm-2" type="search" placeholder="Search todo"
                     onkeyup="searchTodo()" aria-label="Search">
-                <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
 
+                <!-- <div class="input-group mb-3">
+                    <input id="search_todo" onkeyup="searchTodo()" type="search" class="form-control"
+                        placeholder="Recipient's username" aria-label="Recipient's username"
+                        aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="input-group-text" id="basic-addon2"><i class="fa fa-search"
+                                aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div> -->
             </ul>
             <div class="dropdown show">
                 <img id="user_profile_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src=""
@@ -58,8 +67,9 @@
                     <hr>
 
                     <div class="features">
-                        <span><i class="fa fa-check icons" aria-hidden="true"></i></span>
-                        <span class="features_names">My Todos</span>
+                        <a id="my_todos_link" href="#todos_div"><span><i class="fa fa-check icons"
+                                    aria-hidden="true"></i></span>
+                            <span class="features_names">My Todos</span></a>
                     </div>
                     <div class="features">
                         <p onclick="addTodoDropdown()"><span><i class="fa fa-plus icons" aria-hidden="true"></i> </span>
@@ -69,8 +79,9 @@
                     <hr>
 
                     <div class="features">
-                        <span><i class="fa fa-sign-out icons" aria-hidden="true"></i> </span>
-                        <span class="features_names">Logout</span>
+                        <p onclick="logOut()"><span><i class="fa fa-sign-out icons" aria-hidden="true"></i> </span>
+                            <span class="features_names">Logout</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -98,6 +109,7 @@
         <br>
         <br>
     </div>
+
 
     <script src="home.js"></script>
 
