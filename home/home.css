@@ -149,6 +149,8 @@ body {
 .delBtn {
     float: right;
     margin: 5px;
+    border: none;
+    background: none;
 }
 
 
@@ -158,7 +160,7 @@ body {
     display: inline-block;
     height: 35px;
     border: 1px solid rgb(184, 176, 176);
-    font-size: 16px;
+    font-size: 15px;
     padding: 6px;
 }
 
@@ -166,7 +168,7 @@ body {
 
 #add_task_btn {
     display: inline-block;
-    margin: 0px;
+    margin-left: 0px;
     height: 34px;
     padding-left: 15px;
     padding-right: 15px;
@@ -176,7 +178,7 @@ body {
 
 #todos_div {
     margin: auto;
-    width: 90%;
+    width: 100%;
     padding: 20px;
     place-items: center;
     display: grid;
@@ -185,7 +187,21 @@ body {
 
 .todo {
     background-color: white !important;
-    width: 70%;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.19);
+    width: 75%;
     margin: 10px;
     padding: 15px;
+}
+
+.todo_text {
+    display: inline;
+    font-family: sans-serif;
+}
+
+.fa-pencil {
+    color: rgb(19, 0, 87);
+}
+
+.fa-trash-o {
+    color: red;
 }

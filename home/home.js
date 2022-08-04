@@ -25,12 +25,6 @@ for (var i = 0; i < userAccounts.length; i++) {
 
 var profileUserName = document.getElementById('profile_userName')
 let userEmail = document.getElementById('user_email')
-// var userInfo = document.getElementById('userInfo')
-// var userName = document.createElement('h1')
-// var userNameText = document.createTextNode(`Hi, ${getInfo.firstName}`)
-// userName.style.display = "inline"
-// userName.appendChild(userNameText)
-// userInfo.appendChild(userName)
 profileUserName.innerHTML = `${getInfo.firstName} ${getInfo.lastName}`
 userEmail.innerHTML = `${getInfo.email}`
 
@@ -40,7 +34,6 @@ var avatarImg = getInfo.gender === "Male" ? avatar = "https://i.pinimg.com/736x/
 var userAvatar = document.createElement('img')
 userAvatar.setAttribute('src', avatarImg)
 userAvatar.setAttribute('id', 'user_avatar')
-// userInfo.appendChild(userAvatar)
 
 var setuserAvatar = document.getElementById('user_profile_dropdown')
 var userProfileImg = document.getElementById('user_profile_img')
@@ -67,37 +60,14 @@ function addTodo() {
         localStorage.setItem('userAccounts', JSON.stringify(userAccounts))
 
 
-
-
         // fetching todos
-        var separateTodo = document.createElement('div')
-        separateTodo.setAttribute('class', 'todo')
-        var todoPara = document.createElement('p')
-        todoPara.style.display = "inline"
-        var todoText = document.createTextNode(todo.value)
-        todoPara.appendChild(todoText)
-        separateTodo.appendChild(todoPara)
 
-        var delBtn = document.createElement('button')
-        delBtn.setAttribute('class', 'delBtn')
-        var delBtnText = document.createTextNode('Delete')
-        delBtn.appendChild(delBtnText)
-        delBtn.setAttribute('onclick', 'deleteTodo(this)')
-        separateTodo.appendChild(delBtn)
-
-
-        var editBtn = document.createElement('button')
-        editBtn.setAttribute('class', 'editBtn')
-        var editBtnText = document.createTextNode('Edit')
-        editBtn.appendChild(editBtnText)
-        editBtn.setAttribute('onclick', 'editTodo(this)')
-        separateTodo.appendChild(editBtn)
-
-        var lineBreak = document.createElement('br')
-        separateTodo.appendChild(lineBreak)
-
-        todosDiv.appendChild(separateTodo)
-
+        todosDiv.innerHTML += `<div class="todo">
+<p class="todo_text">${todo.value}</p>
+<button class="delBtn" onclick="deleteTodo(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></<button>
+<button class="editBtn" onclick="editTodo(this)"><i class="fa fa-pencil" aria-hidden="true"></i></<button>
+<br>
+</div>`
 
         todo.value = ""
     }
@@ -106,32 +76,12 @@ function addTodo() {
 function getTodosFromLocalStor() {
     for (var i in toDosArray) {
 
-        var separateTodo = document.createElement('div')
-        separateTodo.setAttribute('class', 'todo')
-        var todoPara = document.createElement('p')
-        todoPara.style.display = "inline"
-        var todoText = document.createTextNode(toDosArray[i])
-        todoPara.appendChild(todoText)
-        separateTodo.appendChild(todoPara)
-
-        var delBtn = document.createElement('button')
-        delBtn.setAttribute('class', 'delBtn')
-        var delBtnText = document.createTextNode('Delete')
-        delBtn.appendChild(delBtnText)
-        delBtn.setAttribute('onclick', 'deleteTodo(this)')
-        separateTodo.appendChild(delBtn)
-
-        var editBtn = document.createElement('button')
-        editBtn.setAttribute('class', 'editBtn')
-        var editBtnText = document.createTextNode('Edit')
-        editBtn.appendChild(editBtnText)
-        editBtn.setAttribute('onclick', 'editTodo(this)')
-        separateTodo.appendChild(editBtn)
-
-        var lineBreak = document.createElement('br')
-        separateTodo.appendChild(lineBreak)
-
-        todosDiv.appendChild(separateTodo)
+        todosDiv.innerHTML += `<div class="todo">
+        <p class="todo_text">${toDosArray[i]}</p>
+        <button class="delBtn" onclick="deleteTodo(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></<button>
+        <button class="editBtn" onclick="editTodo(this)"><i class="fa fa-pencil" aria-hidden="true"></i></<button>
+        <br>
+        </div>`
 
     }
 }
@@ -142,7 +92,7 @@ window.onload = () => {
 function deleteTodo(e) {
     e.parentNode.remove();
     for (var i = 0; i < toDosArray.length; i++) {
-        if (toDosArray[i] === e.parentNode.firstChild.innerHTML) {
+        if (toDosArray[i] === e.parentNode.childNodes[1].innerHTML) {
             toDosArray.splice(i, 1);
         }
     }
@@ -210,33 +160,14 @@ searchTodo = () => {
     console.log(filter)
     todosDiv.innerHTML = ""
     for (var i = 0; i < filter.length; i++) {
-        var separateTodo = document.createElement('div')
-        separateTodo.setAttribute('class', 'todo')
-        var todoPara = document.createElement('li')
-        todoPara.style.display = "inline"
-        var todoText = document.createTextNode(filter[i])
-        todoPara.appendChild(todoText)
-        separateTodo.appendChild(todoPara)
 
+        todosDiv.innerHTML += `<div class="todo">
+        <p class="todo_text">${filter[i]}</p>
+        <button class="delBtn" onclick="deleteTodo(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></<button>
+        <button class="editBtn" onclick="editTodo(this)"><i class="fa fa-pencil" aria-hidden="true"></i></<button>
+        <br>
+        </div>`
 
-        var delBtn = document.createElement('button')
-        delBtn.setAttribute('class', 'delBtn')
-        var delBtnText = document.createTextNode('Delete')
-        delBtn.appendChild(delBtnText)
-        delBtn.setAttribute('onclick', 'deleteTodo(this)')
-        separateTodo.appendChild(delBtn)
-
-        var editBtn = document.createElement('button')
-        editBtn.setAttribute('class', 'editBtn')
-        var editBtnText = document.createTextNode('Edit')
-        editBtn.appendChild(editBtnText)
-        editBtn.setAttribute('onclick', 'editTodo(this)')
-        separateTodo.appendChild(editBtn)
-
-        var lineBreak = document.createElement('br')
-        separateTodo.appendChild(lineBreak)
-
-        todosDiv.appendChild(separateTodo)
     }
 }
 
