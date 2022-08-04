@@ -1,12 +1,11 @@
-#user_avatar {
+/* #user_avatar {
     vertical-align: middle;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-left: 10px;
     margin-bottom: 15px;
-}
-
+} */
 
 
 
@@ -134,4 +133,40 @@
 
 #my_todos_link {
     text-decoration: none;
+}
+
+
+#todos_main_div {
+    margin: auto;
+    width: 90%;
+    padding: 20px;
+    background-color: rgb(227, 255, 255);
+    place-items: center;
+    display: grid;
+}
+
+#add_todo_div {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.19);
+    display: inline-block;
+    margin: 0px;
+}
+
+
+
+#todo_field {
+    width: 850px !important;
+    margin: 0px;
+    display: inline-block;
+}
+
+#add_task_btn {
+    display: inline-block;
+    margin: 0px;
+    height: 36px;
+}
+
+#todos_div {
+    margin-top: 20px;
 }

@@ -25,12 +25,12 @@ for (var i = 0; i < userAccounts.length; i++) {
 
 var profileUserName = document.getElementById('profile_userName')
 let userEmail = document.getElementById('user_email')
-var userInfo = document.getElementById('userInfo')
-var userName = document.createElement('h1')
-var userNameText = document.createTextNode(`Hi, ${getInfo.firstName}`)
-userName.style.display = "inline"
-userName.appendChild(userNameText)
-userInfo.appendChild(userName)
+// var userInfo = document.getElementById('userInfo')
+// var userName = document.createElement('h1')
+// var userNameText = document.createTextNode(`Hi, ${getInfo.firstName}`)
+// userName.style.display = "inline"
+// userName.appendChild(userNameText)
+// userInfo.appendChild(userName)
 profileUserName.innerHTML = `${getInfo.firstName} ${getInfo.lastName}`
 userEmail.innerHTML = `${getInfo.email}`
 
@@ -40,7 +40,7 @@ var avatarImg = getInfo.gender === "Male" ? avatar = "https://i.pinimg.com/736x/
 var userAvatar = document.createElement('img')
 userAvatar.setAttribute('src', avatarImg)
 userAvatar.setAttribute('id', 'user_avatar')
-userInfo.appendChild(userAvatar)
+// userInfo.appendChild(userAvatar)
 
 var setuserAvatar = document.getElementById('user_profile_dropdown')
 var userProfileImg = document.getElementById('user_profile_img')

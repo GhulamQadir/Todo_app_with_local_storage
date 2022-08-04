@@ -34,19 +34,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-                <input id="search_todo" class="form-control mr-sm-2" type="search" placeholder="Search todo"
+                <input id="search_todo" class="form-control mr-sm-2" type="search" placeholder="Search task "
                     onkeyup="searchTodo()" aria-label="Search">
-
-                <!-- <div class="input-group mb-3">
-                    <input id="search_todo" onkeyup="searchTodo()" type="search" class="form-control"
-                        placeholder="Recipient's username" aria-label="Recipient's username"
-                        aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="input-group-text" id="basic-addon2"><i class="fa fa-search"
-                                aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div> -->
             </ul>
             <div class="dropdown show">
                 <img id="user_profile_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src=""
@@ -93,23 +82,23 @@
             <ul>
         </div>
     </nav>
-    <div id="userInfo">
 
+
+    <br>
+    <br>
+
+    <div id="todos_main_div" class="navbar-light bg-light">
+        <div id="add_todo_div">
+            <input id="todo_field" class="form-control" type="text" placeholder="Add task">
+            <button id="add_task_btn" onclick="addTodo()">Add todo</button>
+        </div>
+
+
+        <div id="todos_div" class="navbar-light bg-light">
+            <br>
+            <br>
+        </div>
     </div>
-
-
-    <br>
-    <br>
-
-    <input type="text" id="todo_field" placeholder="Enter value" />
-    <br>
-    <button onclick="addTodo()">Add todo</button>
-
-    <div id="todos_div">
-        <br>
-        <br>
-    </div>
-
 
     <script src="home.js"></script>
 
