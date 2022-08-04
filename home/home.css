@@ -22,7 +22,7 @@
 
 .dropdown-menu {
     width: 300px !important;
-    height: 300px !important;
+    height: 285px !important;
     background-color: whitesmoke;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
 }
@@ -66,8 +66,10 @@
 }
 
 .icons {
-    font-size: 18px !important;
+    font-size: 17px !important;
     padding-right: 7px;
+    color: rgb(6, 49, 6);
+    cursor: pointer;
 }
 
 
@@ -110,4 +112,22 @@
         padding: 5px 15px 5px 15px !important;
     }
 
+}
+
+.email_icon {
+    color: grey !important;
+    font-size: 13px !important;
+}
+
+#user_email {
+    color: grey;
+    font-size: 15px;
+    margin-left: 3px;
+}
+
+.features_names {
+    color: rgb(3, 29, 3);
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
 }
