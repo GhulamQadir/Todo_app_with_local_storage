@@ -70,7 +70,8 @@ function addTodo() {
 
 
         // fetching todos
-        var separateTodo = document.createElement('todo')
+        var separateTodo = document.createElement('div')
+        separateTodo.setAttribute('class', 'todo')
         var todoPara = document.createElement('p')
         todoPara.style.display = "inline"
         var todoText = document.createTextNode(todo.value)
@@ -78,6 +79,7 @@ function addTodo() {
         separateTodo.appendChild(todoPara)
 
         var delBtn = document.createElement('button')
+        delBtn.setAttribute('class', 'delBtn')
         var delBtnText = document.createTextNode('Delete')
         delBtn.appendChild(delBtnText)
         delBtn.setAttribute('onclick', 'deleteTodo(this)')
@@ -85,6 +87,7 @@ function addTodo() {
 
 
         var editBtn = document.createElement('button')
+        editBtn.setAttribute('class', 'editBtn')
         var editBtnText = document.createTextNode('Edit')
         editBtn.appendChild(editBtnText)
         editBtn.setAttribute('onclick', 'editTodo(this)')
@@ -103,7 +106,8 @@ function addTodo() {
 function getTodosFromLocalStor() {
     for (var i in toDosArray) {
 
-        var separateTodo = document.createElement('todo')
+        var separateTodo = document.createElement('div')
+        separateTodo.setAttribute('class', 'todo')
         var todoPara = document.createElement('p')
         todoPara.style.display = "inline"
         var todoText = document.createTextNode(toDosArray[i])
@@ -111,12 +115,14 @@ function getTodosFromLocalStor() {
         separateTodo.appendChild(todoPara)
 
         var delBtn = document.createElement('button')
+        delBtn.setAttribute('class', 'delBtn')
         var delBtnText = document.createTextNode('Delete')
         delBtn.appendChild(delBtnText)
         delBtn.setAttribute('onclick', 'deleteTodo(this)')
         separateTodo.appendChild(delBtn)
 
         var editBtn = document.createElement('button')
+        editBtn.setAttribute('class', 'editBtn')
         var editBtnText = document.createTextNode('Edit')
         editBtn.appendChild(editBtnText)
         editBtn.setAttribute('onclick', 'editTodo(this)')
@@ -192,18 +198,6 @@ function logOut() {
 
 
 
-var chevronUpIcon = document.getElementById('chevron_up')
-var chevronDownIcon = document.getElementById('chevron_down')
-
-chevronUp = () => {
-    chevronUpIcon.style.display = "block"
-    chevronDownIcon.style.display = "none"
-}
-
-chevronDown = () => {
-    chevronDownIcon.style.display = "block"
-    chevronUpIcon.style.display = "none"
-}
 
 
 searchTodo = () => {
@@ -217,19 +211,23 @@ searchTodo = () => {
     todosDiv.innerHTML = ""
     for (var i = 0; i < filter.length; i++) {
         var separateTodo = document.createElement('div')
-        var todoPara = document.createElement('p')
+        separateTodo.setAttribute('class', 'todo')
+        var todoPara = document.createElement('li')
         todoPara.style.display = "inline"
         var todoText = document.createTextNode(filter[i])
         todoPara.appendChild(todoText)
         separateTodo.appendChild(todoPara)
 
+
         var delBtn = document.createElement('button')
+        delBtn.setAttribute('class', 'delBtn')
         var delBtnText = document.createTextNode('Delete')
         delBtn.appendChild(delBtnText)
         delBtn.setAttribute('onclick', 'deleteTodo(this)')
         separateTodo.appendChild(delBtn)
 
         var editBtn = document.createElement('button')
+        editBtn.setAttribute('class', 'editBtn')
         var editBtnText = document.createTextNode('Edit')
         editBtn.appendChild(editBtnText)
         editBtn.setAttribute('onclick', 'editTodo(this)')

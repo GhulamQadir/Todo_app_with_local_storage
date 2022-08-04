@@ -141,13 +141,19 @@ body {
     padding: 20px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.19);
     display: inline-block;
-    margin: 0px;
+    margin-bottom: 10px;
 }
 
 
+.editBtn,
+.delBtn {
+    float: right;
+    margin: 5px;
+}
+
 
 #todo_field {
-    width: 800px !important;
+    width: 900px !important;
     margin: 0px;
     display: inline-block;
     height: 35px;
@@ -162,10 +168,24 @@ body {
     display: inline-block;
     margin: 0px;
     height: 34px;
+    padding-left: 15px;
+    padding-right: 15px;
     background-color: rgb(19, 0, 87);
     color: white;
 }
 
 #todos_div {
-    margin-top: 20px;
+    margin: auto;
+    width: 90%;
+    padding: 20px;
+    place-items: center;
+    display: grid;
+    background-color: #f2f8f8 !important;
+}
+
+.todo {
+    background-color: white !important;
+    width: 70%;
+    margin: 10px;
+    padding: 15px;
 }
