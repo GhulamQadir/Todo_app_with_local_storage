@@ -35,7 +35,6 @@ signUp = () => {
         firstName.focus();
         alertErrorDiv.style.display = "block"
         errorMessage.innerHTML = "Please enter your first name"
-        // closeAlertDiv()
         return;
     }
     else if (firstName.value.length != "" && firstName.value.length < 3) {
@@ -107,10 +106,8 @@ signUp = () => {
             if (email.value === userAccounts[i].email) {
                 signUpFormDiv.style.pointerEvents = "none"
                 loader.style.display = "block"
-                document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
                 setTimeout(() => {
                     signUpFormDiv.style.pointerEvents = "auto"
-                    document.body.style.backgroundColor = "rgb(215, 219, 220)"
                     loader.style.display = "none"
                     alertErrorDiv.style.display = "block"
                     errorMessage.innerHTML = "The email address is already in use by another account"
@@ -134,10 +131,8 @@ signUp = () => {
 
                 signUpFormDiv.style.pointerEvents = "none"
                 loader.style.display = "block"
-                document.body.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
                 setTimeout(() => {
                     signUpFormDiv.style.pointerEvents = "auto"
-                    document.body.style.backgroundColor = "rgb(215, 219, 220)"
                     loader.style.display = "none"
 
                     userAccounts.push({ "firstName": firstName.value, "lastName": lastName.value, "email": email.value, "password": password.value, "gender": gender.value })
