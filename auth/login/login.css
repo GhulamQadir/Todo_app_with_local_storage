@@ -99,12 +99,9 @@ input {
 }
 
 #login_btn:hover {
-    background-color: rgb(223, 241, 241);
+    background-color: #f2f8f8;
     transition: all;
 }
-
-
-
 
 
 
@@ -202,7 +199,7 @@ input:focus {
     transform: translate(0, -50%);
     padding: 10px;
     position: absolute;
-    border: 7px solid #f3f3f3;
+    border: 7px solid rgb(237, 237, 237);
     border-radius: 50%;
     border-top: 7px solid #3498db;
     width: 40px;

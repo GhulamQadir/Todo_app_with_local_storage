@@ -58,11 +58,9 @@ function login() {
 
                     loginFormDiv.style.pointerEvents = "none"
                     loader.style.display = "block"
-                    document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
                     setTimeout(() => {
                         loginFormDiv.style.pointerEvents = "auto"
                         loader.style.display = "none"
-                        document.body.style.backgroundColor = "rgb(215, 219, 220)"
                         localStorage.setItem('loggedInUser', JSON.stringify({ "email": email.value, "password": password.value }))
                         console.log("matched")
                         window.location.replace('../../home/home.html')
@@ -74,10 +72,8 @@ function login() {
         if (emailMatch === false) {
             loginFormDiv.style.pointerEvents = "none"
             loader.style.display = "block"
-            document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
             setTimeout(() => {
                 loginFormDiv.style.pointerEvents = "auto"
-                document.body.style.backgroundColor = "rgb(215, 219, 220)"
                 loader.style.display = "none"
                 alertErrorDiv.style.display = "block"
                 errorMessage.innerHTML = "User not found"
@@ -89,10 +85,8 @@ function login() {
         if (emailMatch === true && passwordMatch === false) {
             loginFormDiv.style.pointerEvents = "none"
             loader.style.display = "block"
-            document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
             setTimeout(() => {
                 loginFormDiv.style.pointerEvents = "auto"
-                document.body.style.backgroundColor = "rgb(215, 219, 220)"
                 loader.style.display = "none"
                 alertErrorDiv.style.display = "block"
                 errorMessage.innerHTML = "The password is invalid or the user does not have a password"
