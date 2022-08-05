@@ -1,6 +1,7 @@
 /* whole body color */
 body {
-    background-color: rgb(215, 219, 220);
+    /* background-color: rgb(215, 219, 220); */
+    background-color: #f2f8f8 !important;
 }
 
 
@@ -8,10 +9,13 @@ body {
 #login_form_div {
     margin: auto;
     width: 40%;
-    box-shadow: 0px 0px 3px 1px gray;
+    /* box-shadow: 0px 0px 3px 1px gray; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 13px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-    background-color: rgb(19, 0, 87);
-    color: white;
+    /* background-color: rgb(19, 0, 87); */
+    /* color: white; */
+    color: black;
+    background-color: white;
     box-shadow: 2;
     margin-top: 80px;
     margin-bottom: 30px;
@@ -69,11 +73,21 @@ input {
     width: 43%;
     margin-top: 50px;
     border: 0px;
-    background: none;
-    border-bottom: 1px solid white;
-    color: white;
+    /* background-color: whui; */
+    border-bottom: 2px solid grey;
+    color: black;
     font-size: 18px;
 }
+
+::placeholder {
+    font-weight: 500;
+}
+
+#show_password {
+    font-size: 16px;
+    font-weight: 500;
+}
+
 
 #login_btn {
     padding: 7px 30px 8px 30px;
@@ -81,27 +95,22 @@ input {
     font-weight: 700;
     border: none;
     font-size: 18px;
+    background-color: rgb(224, 224, 238);
 }
 
 #login_btn:hover {
-    background-color: rgb(224, 224, 238);
+    background-color: rgb(223, 241, 241);
     transition: all;
 }
 
 
 
-/* autofill input fields styling */
+
+
+
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0 50px rgb(19, 0, 87) inset;
-    box-shadow: 0 0 0 50px rgb(19, 0, 87) inset;
-    -webkit-text-fill-color: white;
-}
-
-/* placeholder styling */
-::placeholder {
-    color: white;
-    opacity: 1;
+    -webkit-box-shadow: 0 0 0 30px white inset ! important;
 }
 
 /* input on focus styling */
@@ -133,12 +142,15 @@ input:focus {
 #dont_have_an_account {
     font-size: 17px;
     margin-top: 5px;
+    font-weight: 500;
 }
 
 /* Login link styling */
 #signUp_link {
-    color: white;
     font-size: 18px;
+    font-weight: 600;
+    color: rgb(19, 0, 87);
+
 }
 
 /* END */
