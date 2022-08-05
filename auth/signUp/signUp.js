@@ -134,7 +134,7 @@ signUp = () => {
 
                 signUpFormDiv.style.pointerEvents = "none"
                 loader.style.display = "block"
-                document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
+                document.body.style.backgroundColor = "rgba(0, 0, 0, 0.2)"
                 setTimeout(() => {
                     signUpFormDiv.style.pointerEvents = "auto"
                     document.body.style.backgroundColor = "rgb(215, 219, 220)"

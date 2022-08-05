@@ -1,6 +1,6 @@
 /* whole body color */
 body {
-    background-color: rgb(215, 219, 220);
+    background-color: #f2f8f8;
 }
 
 
@@ -8,11 +8,10 @@ body {
 #signUp_form_div {
     margin: auto;
     width: 40%;
-    box-shadow: 0px 0px 3px 1px gray;
     text-align: center;
-    background-color: rgb(19, 0, 87);
-    color: white;
-    box-shadow: 2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 13px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    color: black;
     margin-top: 55px;
     margin-bottom: 30px;
     padding: 7px 2px 20px 2px !important;
@@ -58,8 +57,8 @@ input {
     margin-top: 20px;
     border: 0px;
     background: none;
-    border-bottom: 1px solid white;
-    color: white;
+    border-bottom: 2px solid grey;
+    color: black;
     font-size: 16px;
 }
 
@@ -71,15 +70,13 @@ input {
 /* autofill input fields styling */
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0 50px rgb(19, 0, 87) inset;
-    box-shadow: 0 0 0 50px rgb(19, 0, 87) inset;
-    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0 30px white inset ! important;
 }
+
 
 /* placeholder styling */
 ::placeholder {
-    color: white;
-    opacity: 1;
+    font-weight: 500;
 }
 
 /* input on focus styling */
@@ -165,6 +162,7 @@ input:focus {
 #show_password_text {
     padding-left: 4px;
     font-size: 13px;
+    font-weight: 500;
 }
 
 
@@ -176,10 +174,11 @@ input:focus {
     border-radius: 45px;
     font-weight: 700;
     border: none;
+    background-color: rgb(224, 224, 238);
 }
 
 #signUp_btn:hover {
-    background-color: rgb(224, 224, 238);
+    background-color: #f2f8f8;
     transition: all;
 }
 
@@ -188,11 +187,13 @@ input:focus {
 #already_have_an_account {
     font-size: 14px;
     margin-top: 5px;
+    font-weight: 500;
 }
 
 /* Login link styling */
 #login_link {
-    color: white;
+    font-weight: 600;
+    color: rgb(19, 0, 87);
     font-size: 16px;
 }
 
