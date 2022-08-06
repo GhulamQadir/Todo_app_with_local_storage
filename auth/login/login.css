@@ -5,15 +5,12 @@ body {
 }
 
 
-/* Login form div styling*/
+/* Login Form Div styling*/
 #login_form_div {
     margin: auto;
     width: 40%;
-    /* box-shadow: 0px 0px 3px 1px gray; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 13px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-    /* background-color: rgb(19, 0, 87); */
-    /* color: white; */
     color: black;
     background-color: white;
     box-shadow: 2;
@@ -22,6 +19,8 @@ body {
     padding: 7px 2px 20px 2px !important;
 }
 
+
+/* Responsivenss of Login FormDiv and show passowrd div */
 @media screen and (max-width: 850px) {
     #login_form_div {
         width: 70%;
@@ -56,7 +55,7 @@ body {
 
 
 
-/* login heading */
+/* Login heading */
 #login_heading {
     margin-top: 50px;
     margin-bottom: 35px;
@@ -73,37 +72,10 @@ input {
     width: 43%;
     margin-top: 50px;
     border: 0px;
-    /* background-color: whui; */
     border-bottom: 2px solid grey;
     color: black;
     font-size: 18px;
 }
-
-::placeholder {
-    font-weight: 500;
-}
-
-#show_password {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-
-#login_btn {
-    padding: 7px 30px 8px 30px;
-    border-radius: 45px;
-    font-weight: 700;
-    border: none;
-    font-size: 18px;
-    background-color: rgb(224, 224, 238);
-}
-
-#login_btn:hover {
-    background-color: #f2f8f8;
-    transition: all;
-}
-
-
 
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
@@ -115,7 +87,12 @@ input:focus {
     outline: none;
 }
 
+::placeholder {
+    font-weight: 500;
+}
 
+
+/* Show Password styling */
 #show_password_div {
     width: 77%;
     text-align: center;
@@ -132,6 +109,31 @@ input:focus {
     #show_password_div {
         width: 84% !important;
     }
+}
+
+#show_password_text {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Show Password styling End*/
+
+
+
+
+/* Login Button Styling */
+#login_btn {
+    padding: 7px 30px 8px 30px;
+    border-radius: 45px;
+    font-weight: 700;
+    border: none;
+    font-size: 18px;
+    background-color: rgb(224, 224, 238);
+}
+
+#login_btn:hover {
+    background-color: #f2f8f8;
+    transition: all;
 }
 
 
@@ -153,7 +155,7 @@ input:focus {
 /* END */
 
 
-/* alert box styling */
+/* Alert Box styling */
 #alert {
     padding: 20px;
     background-color: #f44336;
@@ -166,6 +168,8 @@ input:focus {
     border-radius: 4px;
 }
 
+
+/* Alert box close button styling */
 #closebtn {
     margin-left: 15px;
     color: white;
@@ -181,7 +185,7 @@ input:focus {
     color: black;
 }
 
-/* end */
+/* END */
 
 
 
