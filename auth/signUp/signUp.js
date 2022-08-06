@@ -1,5 +1,6 @@
-
+// Users Accounts Array
 var userAccounts = []
+
 
 var signUpFormDiv = document.getElementById('signUp_form_div')
 var alertErrorDiv = document.getElementById('alert')
@@ -8,6 +9,7 @@ var errorMessage = document.getElementById('error_message')
 var loader = document.getElementById('loader')
 
 
+// close error alert function
 closeErrorAlert = () => {
     alertErrorDiv.style.opacity = "0"
     setTimeout(() => {
@@ -18,26 +20,33 @@ closeErrorAlert = () => {
 }
 
 
-
+// Sign Up function
 signUp = () => {
-    var firstName = document.getElementById('first_name')
-    var lastName = document.getElementById('last_name')
-    var email = document.getElementById('email')
-    var password = document.getElementById('password')
-    var gender = document.getElementById('gender')
 
-    var emailPattern = /^[\w\-\.\+]+\@[a-zA-Z0-9\. \-]+\.[a-zA-z0-9]{2,4}$/;
-    var passwordPattern = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])");
-
+    // Getting data from input fields 
+    let firstName = document.getElementById('first_name')
+    let lastName = document.getElementById('last_name')
+    let email = document.getElementById('email')
+    let password = document.getElementById('password')
+    let gender = document.getElementById('gender')
 
 
+
+    // Regex for Email and password Validation
+    let emailPattern = /^[\w\-\.\+]+\@[a-zA-Z0-9\. \-]+\.[a-zA-z0-9]{2,4}$/;
+    let passwordPattern = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])");
+
+
+
+
+    // Form Validation
     if (firstName.value === "") {
         firstName.focus();
         alertErrorDiv.style.display = "block"
         errorMessage.innerHTML = "Please enter your first name"
         return;
     }
-    else if (firstName.value.length != "" && firstName.value.length < 3) {
+    else if (firstName.value.length < 3) {
         firstName.focus();
         alertErrorDiv.style.display = "block"
         errorMessage.innerHTML = "Your first name is too short"
@@ -100,6 +109,8 @@ signUp = () => {
     }
 
 
+
+    // Checking User's Credentials if already registered
     else {
         var emailMatch = false;
         for (var i = 0; i < userAccounts.length; i++) {
@@ -136,7 +147,7 @@ signUp = () => {
                     loader.style.display = "none"
 
                     userAccounts.push({ "firstName": firstName.value, "lastName": lastName.value, "email": email.value, "password": password.value, "gender": gender.value })
-                    setItem()
+                    setUserAccounts()
                     window.location.replace('../login/login.html')
                 }, 2000)
 
@@ -146,22 +157,26 @@ signUp = () => {
 
 }
 
-function setItem() {
+
+// setting Users Accounts in local storage
+function setUserAccounts() {
     localStorage.setItem('userAccounts', JSON.stringify(userAccounts))
 }
 
 
-function getItem() {
+// getting Users Accounts in local storage
+function getUserAccounts() {
     var getUserAccounts = JSON.parse(localStorage.getItem('userAccounts'))
     userAccounts = getUserAccounts
     if (!userAccounts) {
         userAccounts = []
     }
 }
-getItem()
+getUserAccounts()
 
 
 
+// Show and Hide password checkBox
 function showAndHidePassword() {
     var getPassword = document.getElementById("password");
     if (getPassword.type === "password") {
