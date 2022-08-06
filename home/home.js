@@ -1,20 +1,30 @@
-var getUser = JSON.parse(localStorage.getItem('userAccounts'))
-var getLoggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
-var edit = document.getElementById('edit_todo')
-var editModal = document.getElementById('edit_modal')
+// Todos Array
+let toDosArray = []
+
+
+
+let getUserAccounts = JSON.parse(localStorage.getItem('userAccounts'))
+let todosDiv = document.getElementById('todos_div')
+let getLoggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
+let edit = document.getElementById('edit_todo')
+let profileUserName = document.getElementById('profile_userName')
+let userEmail = document.getElementById('user_email')
+let editModal = document.getElementById('edit_modal')
+let todo = document.getElementById('todo_field')
 let currentArrayIndex;
 let innerVal;
 
 
-var userAccounts = getUser
-var loggedInUser = getLoggedInUser
+let userAccounts = getUserAccounts
+let loggedInUser = getLoggedInUser
 
-var toDosArray = []
-var todosDiv = document.getElementById('todos_div')
+let getInfo = "";
 
 
-var getInfo = "";
 
+
+
+// Getting Current User
 for (var i = 0; i < userAccounts.length; i++) {
     if (userAccounts[i].email === loggedInUser.email && userAccounts[i].password === loggedInUser.password) {
 
@@ -23,8 +33,6 @@ for (var i = 0; i < userAccounts.length; i++) {
     }
 }
 
-var profileUserName = document.getElementById('profile_userName')
-let userEmail = document.getElementById('user_email')
 
 
 // capitalizing first name
@@ -47,8 +55,8 @@ profileUserName.innerHTML = `${firstName} ${lastName}`
 userEmail.innerHTML = `${getInfo.email}`
 
 
-var avatar = ""
-var avatarImg = getInfo.gender === "Male" ? avatar = "https://i.pinimg.com/736x/d6/30/8a/d6308a0357b762ee72b49b482f125ef7.jpg" : avatar = "https://cdnb.artstation.com/p/assets/images/images/001/372/641/large/hamada-mabrouk-woman-avatar-hijab-3.jpg?1445282460"
+// User avatar image (profile image)
+let avatarImg = getInfo.gender === "Male" ? avatar = "https://i.pinimg.com/736x/d6/30/8a/d6308a0357b762ee72b49b482f125ef7.jpg" : avatar = "https://cdnb.artstation.com/p/assets/images/images/001/372/641/large/hamada-mabrouk-woman-avatar-hijab-3.jpg?1445282460"
 var userAvatar = document.createElement('img')
 userAvatar.setAttribute('src', avatarImg)
 userAvatar.setAttribute('id', 'user_avatar')
@@ -60,10 +68,10 @@ userProfileImg.src = avatarImg
 
 
 
-let todo = document.getElementById('todo_field')
 
 
-function addTodo() {
+// Add Todo function
+addTodo = () => {
 
     if (todo.value === "") {
         console.log("Please enter some value")
@@ -78,7 +86,7 @@ function addTodo() {
         localStorage.setItem('userAccounts', JSON.stringify(userAccounts))
 
 
-        // fetching todos
+        // fetching todo
 
         todosDiv.innerHTML += `<div class="todo">
 <p class="todo_text">${todo.value}</p>
@@ -91,6 +99,9 @@ function addTodo() {
     }
 }
 
+
+
+// Getting todos from local storage when page refreshes
 function getTodosFromLocalStor() {
     for (var i in toDosArray) {
 
@@ -103,10 +114,11 @@ function getTodosFromLocalStor() {
 
     }
 }
-window.onload = () => {
-    getTodosFromLocalStor()
-}
 
+
+
+
+// Delete Todo Function
 function deleteTodo(e) {
     e.parentNode.remove();
     for (var i = 0; i < toDosArray.length; i++) {
@@ -114,8 +126,6 @@ function deleteTodo(e) {
             toDosArray.splice(i, 1);
         }
     }
-    console.log(toDosArray)
-
 
 
     // setting new todos array in local storage
@@ -124,6 +134,8 @@ function deleteTodo(e) {
 }
 
 
+
+// Edit Todo Function
 function editTodo(e) {
     editModal.style.display = "block"
     for (var i = 0; i < toDosArray.length; i++) {
@@ -132,7 +144,6 @@ function editTodo(e) {
             currentArrayIndex = i
             edit.value = toDosArray[i]
             innerVal = e
-
 
         }
     }
@@ -147,7 +158,9 @@ function editTodo(e) {
 
 }
 
-function editValue() {
+
+// Edit Todo Value Function
+function editTodoValue() {
     toDosArray.splice(currentArrayIndex, 1, edit.value);
     innerVal.parentNode.childNodes[1].innerHTML = edit.value
     getInfo.todos = toDosArray
@@ -156,6 +169,7 @@ function editValue() {
 }
 
 
+// Setting local storage todos in Todos Array
 function getTodos() {
     var todos = getInfo.todos
     toDosArray = todos
@@ -167,7 +181,9 @@ getTodos()
 
 
 
-function logOut() {
+
+// Logout Function
+logOut = () => {
     localStorage.removeItem('loggedInUser')
     window.location.replace('../auth/login/login.html')
 }
@@ -175,7 +191,7 @@ function logOut() {
 
 
 
-
+// Search Todo Function
 searchTodo = () => {
     let search = document.getElementById('search_todo').value
     console.log(`Value: ${search}`)
@@ -183,7 +199,6 @@ searchTodo = () => {
         return a.includes(search)
 
     })
-    console.log(filter)
     todosDiv.innerHTML = ""
     for (var i = 0; i < filter.length; i++) {
 
@@ -197,12 +212,13 @@ searchTodo = () => {
     }
 }
 
-
+// Profile Dropdown Add todo link Function
 addTodoDropdown = () => {
     todo.focus()
 }
 
 
+// Close Edit Modal Function
 closeModal = () => {
     editModal.style.display = "none"
 }
