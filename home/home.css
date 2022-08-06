@@ -1,23 +1,20 @@
+/* whole body color */
 body {
     background-color: #f2f8f8 !important;
 }
 
+/* Navbar styling */
 #my_nav {
     padding: 15px 40px 15px 40px;
 }
 
+/* Navbar logout button */
 .nav_logut_Btn {
     margin-left: 17px !important;
     padding: 5px 15px 5px 15px !important;
 }
 
-.dropdown-menu {
-    width: 300px !important;
-    height: 285px !important;
-    background-color: whitesmoke;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
-}
-
+/* Navbar User Profile dropdown Styling  */
 #user_profile_dropdown,
 #user_profile_img {
     width: 45px;
@@ -28,6 +25,12 @@ body {
     cursor: pointer;
 }
 
+.dropdown-menu {
+    width: 300px !important;
+    height: 285px !important;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+}
 
 #user_dropdown_img {
     display: inline-block;
@@ -63,7 +66,32 @@ body {
     cursor: pointer;
 }
 
+.email_icon {
+    color: grey !important;
+    font-size: 13px !important;
+}
 
+#user_email {
+    color: grey;
+    font-size: 15px;
+    margin-left: 3px;
+}
+
+.features_names {
+    color: rgb(3, 29, 3);
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#my_todos_link {
+    text-decoration: none;
+}
+
+/*  Navbar dropdown Styling End */
+
+
+/* Navbar Search Todo styling */
 #search_todo {
     width: 850px !important;
     margin-left: 100px;
@@ -89,10 +117,6 @@ body {
 
 }
 
-
-
-
-
 @media screen and (max-width: 992px) {
     #search_todo {
         width: 100% !important;
@@ -101,6 +125,7 @@ body {
         margin-bottom: 20px;
     }
 
+    /* user profile dropdown responsivness */
     #user_profile_dropdown {
         width: 40px;
         height: 40px;
@@ -109,6 +134,7 @@ body {
         cursor: pointer;
     }
 
+    /* nav logout button responsiveness */
     .nav_logut_Btn {
         margin-left: 0px !important;
         padding: 5px 15px 5px 15px !important;
@@ -116,29 +142,11 @@ body {
 
 }
 
-.email_icon {
-    color: grey !important;
-    font-size: 13px !important;
-}
-
-#user_email {
-    color: grey;
-    font-size: 15px;
-    margin-left: 3px;
-}
-
-.features_names {
-    color: rgb(3, 29, 3);
-    font-size: 17px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-#my_todos_link {
-    text-decoration: none;
-}
+/* Navbar Search Todo styling End*/
 
 
+
+/* Todos Main Div styling */
 #todos_main_div {
     margin: auto;
     padding: 20px;
@@ -146,6 +154,21 @@ body {
     display: grid;
 }
 
+
+
+/* Todos Div Styling */
+#todos_div {
+    margin: auto;
+    width: 100%;
+    padding: 20px;
+    place-items: center;
+    display: grid;
+    background-color: #f2f8f8 !important;
+}
+
+
+
+/* Add Todo Div styling */
 #add_todo_div {
     background-color: white;
     padding: 20px;
@@ -155,13 +178,21 @@ body {
 }
 
 
-.editBtn,
-.delBtn {
-    float: right;
-    margin: 5px;
+
+
+/*          Todos Div Styling              */
+
+
+/* Todo List Heading Styling */
+#todo_list_heading {
+    font-size: 30px;
+    font-family: sans-serif;
+    color: blue;
     border: none;
-    background: none;
 }
+
+
+
 
 #todo_field {
     width: 900px !important;
@@ -173,6 +204,8 @@ body {
     padding: 6px;
 }
 
+
+/* Add todo button styling */
 #add_task_btn {
     display: inline-block;
     margin-left: 0px;
@@ -183,6 +216,8 @@ body {
     color: white;
 }
 
+
+/* Responsiveness of add Todo Div elements */
 @media screen and (max-width: 1050px) {
     #todo_field {
         width: 650px !important;
@@ -242,6 +277,14 @@ body {
     }
 }
 
+/*         End           */
+
+
+
+
+
+
+/* Separate todo styling */
 .todo {
     background-color: white !important;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.19);
@@ -250,6 +293,8 @@ body {
     padding: 15px;
 }
 
+
+/* Responsiveness of todo separate todo div */
 @media screen and (max-width: 480px) {
     #todo_field {
         width: 73% !important;
@@ -275,17 +320,6 @@ body {
 }
 
 
-
-#todos_div {
-    margin: auto;
-    width: 100%;
-    padding: 20px;
-    place-items: center;
-    display: grid;
-    background-color: #f2f8f8 !important;
-}
-
-
 @media screen and (max-width: 800px) {
     .todo {
         width: 80%;
@@ -298,35 +332,43 @@ body {
     }
 }
 
+/* Todo value styling */
 .todo_text {
     display: inline;
     font-family: sans-serif;
 }
 
+
+/* Edit and delete button styling */
+.editBtn,
+.delBtn {
+    float: right;
+    margin: 5px;
+    border: none;
+    background: none;
+}
+
+/* edit button icon styling  */
 .fa-pencil {
     color: rgb(19, 0, 87);
     cursor: pointer;
 }
 
+/* delete button icon styling  */
 .fa-trash-o {
     color: red;
     cursor: pointer;
     border: none;
 }
 
-#todo_list_heading {
-    font-size: 30px;
-    font-family: sans-serif;
-    color: blue;
-    border: none;
-}
 
 
 
 
 
 
-/* MODAL STYLING */
+
+/*           Edit Todo MODAL STYLING          */
 .modal {
     display: none;
     position: fixed;
@@ -343,7 +385,8 @@ body {
     /* Black w/ opacity */
 }
 
-/* ERRORS Modal Content */
+
+/* Modal Content Styling*/
 .modal-content {
     position: relative;
     margin: auto;
@@ -389,7 +432,7 @@ body {
     }
 }
 
-/* close modal button */
+/* close modal button styling*/
 .close_modal_btn {
     margin-right: 8px;
     font-size: 28px;
@@ -400,6 +443,8 @@ body {
     color: grey;
 }
 
+
+/* Modal Heading */
 #modal_heading {
     display: inline;
     font-size: 21px;
@@ -407,12 +452,13 @@ body {
 }
 
 
-
+/* Modal buttons (Save changes and Cancel) */
 #edit_modal_btns {
     margin: 40px 5px 10px 5px;
 }
 
 
+/* Edit Button */
 #modal_edit_btn {
     background-color: rgb(19, 0, 87);
     color: white;
@@ -424,6 +470,8 @@ body {
     float: right;
 }
 
+
+/* Cancel button */
 #modal_cancel_btn {
     background-color: grey;
     color: white;
@@ -435,6 +483,8 @@ body {
     float: right;
 }
 
+
+/* Edit Todo Field Styling */
 #edit_todo {
     margin-top: 20px;
     width: 50%;
@@ -465,3 +515,5 @@ body {
         width: 90% !important;
     }
 }
+
+/*               END            */
