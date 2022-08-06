@@ -17,6 +17,8 @@ body {
     padding: 7px 2px 20px 2px !important;
 }
 
+
+/* Responsiveness of Sign Up Form Div */
 @media screen and (max-width: 850px) {
     #signUp_form_div {
         width: 70%;
@@ -41,6 +43,7 @@ body {
     }
 }
 
+
 /* Create account heading */
 #create_account_heading {
     margin-top: 30px;
@@ -62,15 +65,16 @@ input {
     font-size: 16px;
 }
 
-/* gender field */
-#gender {
-    width: 43%;
-}
-
 /* autofill input fields styling */
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0 30px white inset ! important;
+}
+
+
+/* input on focus styling */
+input:focus {
+    outline: none;
 }
 
 
@@ -79,11 +83,11 @@ input:-webkit-autofill:focus {
     font-weight: 500;
 }
 
-/* input on focus styling */
-input:focus {
-    outline: none;
-}
 
+/* gender field styling */
+#gender {
+    width: 43%;
+}
 
 
 /* responsiveness of input fields and gender */
@@ -114,11 +118,11 @@ input:focus {
     }
 }
 
-/* end here */
+/* ends here */
 
 
 
-/* alert box styling */
+/* Alert box styling */
 #alert {
     padding: 20px;
     background-color: #f44336;
@@ -131,6 +135,7 @@ input:focus {
     border-radius: 4px;
 }
 
+/* Alert box close button styling */
 #closebtn {
     margin-left: 15px;
     color: white;
@@ -146,24 +151,31 @@ input:focus {
     color: black;
 }
 
-/* end */
+/* Alert box styling end */
 
 
+
+
+
+/* Show password div styling */
 #show_password_div {
     width: 78%;
     margin-bottom: 16px;
 }
 
+/* show and hide password checkbox styling */
 #checkBox {
     height: 13px !important;
     width: 15px;
 }
 
+/* Show password text styling */
 #show_password_text {
     padding-left: 4px;
     font-size: 13px;
     font-weight: 500;
 }
+
 
 
 
@@ -201,8 +213,11 @@ input:focus {
 
 
 
-/* loader  */
 
+
+
+
+/*             LOADER STYLING              */
 #loader {
     display: none;
     position: absolute;
@@ -219,9 +234,7 @@ input:focus {
     -webkit-animation: spin 2s linear infinite;
     /* Safari */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
     animation: spin 2s linear infinite;
-
 }
 
 /* Safari */
