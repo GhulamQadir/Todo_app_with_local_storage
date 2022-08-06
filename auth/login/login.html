@@ -11,6 +11,7 @@
 
 <body>
 
+    <!-- Login Form Div -->
     <div id="loader"></div>
     <div id="login_form_div">
         <div id="alert">
@@ -18,22 +19,33 @@
             <span id="error_message"></span>
         </div>
 
+
+        <!-- Login Heading -->
         <p id="login_heading">Login</p>
 
-        <input id="email" type="email" placeholder="Email" />
-        <!-- <div class="loader"></div> -->
 
+
+        <!-- Text fields -->
+        <input id="email" type="email" placeholder="Email" />
         <br>
         <input id="password" type="password" placeholder="Password" />
         <br>
 
+
+        <!-- Show Password Div -->
         <div id="show_password_div">
-            <input id="show_password_box" type="checkbox" onclick="showAndHidePassword()"> <span id="show_password_text">Show Password</span>
+            <input id="show_password_box" type="checkbox" onclick="showAndHidePassword()"> <span
+                id="show_password_text">Show Password</span>
             <br>
         </div>
+
+
+        <!-- Login Button -->
         <button id="login_btn" onclick="login()">Login</button>
         <br>
         <br>
+
+
         <p id="dont_have_an_account">Don't have an account?
             <a id="signUp_link" href="../signUp/signUp.html"> Sign Up</a>
 

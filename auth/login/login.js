@@ -1,6 +1,10 @@
+// Users Accounts Array
 var userAccounts = []
+
+// Getting User accounts
 var getUser = JSON.parse(localStorage.getItem('userAccounts'))
 
+// setting accounts in an array
 userAccounts = getUser
 
 
@@ -12,6 +16,9 @@ var errorMessage = document.getElementById('error_message')
 var loader = document.getElementById('loader')
 
 
+
+
+// close error alert function
 closeErrorAlert = () => {
     alertErrorDiv.style.opacity = "0"
     setTimeout(() => {
@@ -21,11 +28,19 @@ closeErrorAlert = () => {
 
 }
 
-function login() {
+
+
+
+
+// Login Function
+login = () => {
+
+    // getting email and password from input fields
     var email = document.getElementById('email')
     var password = document.getElementById('password')
 
 
+    // Login Form Validation
     if (email.value === "") {
         email.focus();
         console.log("Please enter your email address")
@@ -43,6 +58,9 @@ function login() {
         return;
     }
 
+
+
+    // Checking User's credentials
     else {
         var emailMatch = false;
         var passwordMatch = false;
@@ -99,6 +117,9 @@ function login() {
 }
 
 
+
+
+// Show and Hide password function
 function showAndHidePassword() {
     var getPassword = document.getElementById("password");
     if (getPassword.type === "password") {
