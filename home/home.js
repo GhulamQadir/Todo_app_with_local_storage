@@ -138,6 +138,13 @@ function editTodo(e) {
     }
     console.log(toDosArray)
 
+
+    window.onclick = function (event) {
+        if (event.target == editModal) {
+            editModal.style.display = "none";
+        }
+    }
+
 }
 
 function editValue() {

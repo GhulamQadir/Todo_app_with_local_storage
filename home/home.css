@@ -332,7 +332,7 @@ body {
     position: fixed;
     z-index: 1;
     /* Sit on top */
-    padding-top: 100px;
+    padding-top: 130px;
     /* Location of the box */
     left: 0;
     top: 0;
@@ -346,12 +346,10 @@ body {
 /* ERRORS Modal Content */
 .modal-content {
     position: relative;
-    /* background-color: #bf3b32 !important; */
-    /* color: white; */
     margin: auto;
-    padding: 10px;
+    padding: 20px 15px 10px 15px;
     border: 1px solid #888;
-    width: 70% !important;
+    width: 45% !important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -388,5 +386,82 @@ body {
     to {
         top: 0;
         opacity: 1
+    }
+}
+
+/* close modal button */
+.close_modal_btn {
+    margin-right: 8px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+    display: inline;
+    color: grey;
+}
+
+#modal_heading {
+    display: inline;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+
+
+#edit_modal_btns {
+    margin: 40px 5px 10px 5px;
+}
+
+
+#modal_edit_btn {
+    background-color: rgb(19, 0, 87);
+    color: white;
+    border-radius: 4px;
+    padding: 5px 13px 5px 13px;
+    font-size: 15px;
+    border: none;
+    margin-right: 5px;
+    float: right;
+}
+
+#modal_cancel_btn {
+    background-color: grey;
+    color: white;
+    border-radius: 4px;
+    padding: 5px 13px 5px 13px;
+    font-size: 15px;
+    border: none;
+    margin-right: 5px;
+    float: right;
+}
+
+#edit_todo {
+    margin-top: 20px;
+    width: 50%;
+    border: 2px solid grey;
+    height: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+    .modal-content {
+        width: 55% !important;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .modal-content {
+        width: 65% !important;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .modal-content {
+        width: 80% !important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .modal-content {
+        width: 90% !important;
     }
 }

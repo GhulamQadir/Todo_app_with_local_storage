@@ -16,14 +16,16 @@
     <!-- show edit modal-->
     <div id="edit_modal" class="modal">
         <div class="modal-content">
-            <span class="close_modal_btn" onclick="closeModal()">&times;</span>
-            <h5>Edit Task</h5>
             <div>
-                <input type="text" id="edit_todo">
+                <span class="close_modal_btn" onclick="closeModal()">&times;</span>
+                <p id="modal_heading">Edit Task</p>
             </div>
             <div>
-                <button onclick="closeModal()">Cancel</button>
-                <button onclick="editValue()">Save Changes</button>
+                <input type="text" id="edit_todo" placeholder="Edit task">
+            </div>
+            <div id="edit_modal_btns">
+                <button id="modal_cancel_btn" onclick="closeModal()">Cancel</button>
+                <button id="modal_edit_btn" onclick="editValue()">Save Changes</button>
             </div>
         </div>
 
