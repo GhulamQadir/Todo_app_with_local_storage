@@ -25,7 +25,25 @@ for (var i = 0; i < userAccounts.length; i++) {
 
 var profileUserName = document.getElementById('profile_userName')
 let userEmail = document.getElementById('user_email')
-profileUserName.innerHTML = `${getInfo.firstName} ${getInfo.lastName}`
+
+
+// capitalizing first name
+let firstNameChar1 = getInfo.firstName.slice(0, 1)
+firstNameChar1 = firstNameChar1.toUpperCase();
+let firstNameOtherChars = getInfo.firstName.slice(1)
+firstNameOtherChars = firstNameOtherChars.toLowerCase();
+let firstName = firstNameChar1 + firstNameOtherChars
+
+
+// capitalizing last name
+let lastNameChar1 = getInfo.lastName.slice(0, 1)
+lastNameChar1 = lastNameChar1.toUpperCase();
+let lastNameOtherChars = getInfo.lastName.slice(1)
+lastNameOtherChars = lastNameOtherChars.toLowerCase();
+let lastName = lastNameChar1 + lastNameOtherChars
+
+
+profileUserName.innerHTML = `${firstName} ${lastName}`
 userEmail.innerHTML = `${getInfo.email}`
 
 
