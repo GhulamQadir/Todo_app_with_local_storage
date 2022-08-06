@@ -127,7 +127,8 @@ function deleteTodo(e) {
 function editTodo(e) {
     editModal.style.display = "block"
     for (var i = 0; i < toDosArray.length; i++) {
-        if (toDosArray[i] === e.parentNode.firstChild.innerHTML) {
+
+        if (toDosArray[i] === e.parentNode.childNodes[1].innerHTML) {
             currentArrayIndex = i
             edit.value = toDosArray[i]
             innerVal = e
@@ -139,9 +140,9 @@ function editTodo(e) {
 
 }
 
-editValue = () => {
+function editValue() {
     toDosArray.splice(currentArrayIndex, 1, edit.value);
-    innerVal.parentNode.firstChild.innerHTML = edit.value
+    innerVal.parentNode.childNodes[1].innerHTML = edit.value
     getInfo.todos = toDosArray
     localStorage.setItem('userAccounts', JSON.stringify(userAccounts))
     editModal.style.display = "none"
@@ -181,8 +182,8 @@ searchTodo = () => {
 
         todosDiv.innerHTML += `<div class="todo">
         <p class="todo_text">${filter[i]}</p>
-        <button class="delBtn" onclick="deleteTodo(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></<button>
-        <button class="editBtn" onclick="editTodo(this)"><i class="fa fa-pencil" aria-hidden="true"></i></<button>
+        <button id="delBtn" onclick="deleteTodo(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></<button>
+        <button id="editBtn" onclick="editTodo(this)"><i class="fa fa-pencil" aria-hidden="true"></i></<button>
         <br>
         </div>`
 
@@ -192,4 +193,9 @@ searchTodo = () => {
 
 addTodoDropdown = () => {
     todo.focus()
+}
+
+
+closeModal = () => {
+    editModal.style.display = "none"
 }
