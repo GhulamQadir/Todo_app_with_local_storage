@@ -147,7 +147,6 @@ function editTodo(e) {
 
         }
     }
-    console.log(toDosArray)
 
 
     window.onclick = function (event) {
@@ -204,8 +203,8 @@ searchTodo = () => {
 
         todosDiv.innerHTML += `<div class="todo">
         <p class="todo_text">${filter[i]}</p>
-        <button id="delBtn" onclick="deleteTodo(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></<button>
-        <button id="editBtn" onclick="editTodo(this)"><i class="fa fa-pencil" aria-hidden="true"></i></<button>
+        <button class="delBtn" onclick="deleteTodo(this)"><i class="fa fa-trash-o" aria-hidden="true"></i></<button>
+        <button class="editBtn" onclick="editTodo(this)"><i class="fa fa-pencil" aria-hidden="true"></i></<button>
         <br>
         </div>`
 
