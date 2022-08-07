@@ -50,7 +50,6 @@ signUp = () => {
         firstName.focus();
         alertErrorDiv.style.display = "block"
         errorMessage.innerHTML = "Your first name is too short"
-        console.log("Your first name is too short")
         return;
     }
     if (lastName.value === "") {
@@ -61,7 +60,6 @@ signUp = () => {
     }
     else if (lastName.value.length < 2) {
         lastName.focus();
-        console.log("Your last name is too short")
         alertErrorDiv.style.display = "block"
         errorMessage.innerHTML = "Your last name is too short"
         return;
@@ -69,7 +67,6 @@ signUp = () => {
 
     if (gender.value.length < 4 || gender.value.length > 6) {
         gender.focus();
-        console.log("Please select your gender")
         alertErrorDiv.style.display = "block"
         errorMessage.innerHTML = "Please select your gender"
         return;
@@ -82,7 +79,6 @@ signUp = () => {
     }
     else if (!(email.value.match(emailPattern))) {
         email.focus();
-        console.log("Please enter your valid email address")
         alertErrorDiv.style.display = "block"
         errorMessage.innerHTML = "Please enter your valid email address"
         return;
@@ -95,14 +91,12 @@ signUp = () => {
     }
     else if (password.value.length < 8) {
         password.focus();
-        console.log("Your password must be at least 8 characters")
         alertErrorDiv.style.display = "block"
         errorMessage.innerHTML = "Your password must be at least 8 characters"
         return;
     }
     else if (password.value.length > 25) {
         password.focus();
-        console.log("Your password must be at max 25 characters")
         alertErrorDiv.style.display = "block"
         errorMessage.innerHTML = "Your password must be at max 25 characters"
         return;
@@ -132,7 +126,6 @@ signUp = () => {
 
             if (!(password.value.match(passwordPattern))) {
                 password.focus();
-                console.log("Your password should contain at least one uppercase character, one lowercase character and one digit")
                 alertErrorDiv.style.display = "block"
                 errorMessage.innerHTML = "Your password should contain at least one uppercase character, one lowercase character and one digit"
                 return;

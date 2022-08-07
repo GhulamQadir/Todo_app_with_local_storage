@@ -81,7 +81,6 @@ addTodo = () => {
         toDosArray.push(todo.value)
 
         getInfo.todos = toDosArray
-        console.log(getInfo)
 
         localStorage.setItem('userAccounts', JSON.stringify(userAccounts))
 
@@ -193,7 +192,6 @@ logOut = () => {
 // Search Todo Function
 searchTodo = () => {
     let search = document.getElementById('search_todo').value
-    console.log(`Value: ${search}`)
     let filter = toDosArray.filter(a => {
         return a.includes(search)
 

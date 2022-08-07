@@ -43,7 +43,6 @@ login = () => {
     // Login Form Validation
     if (email.value === "") {
         email.focus();
-        console.log("Please enter your email address")
         alertErrorDiv.style.display = "block"
         errorMessage.innerHTML = "Please enter your email address"
         return;
@@ -52,7 +51,6 @@ login = () => {
 
     if (password.value === "") {
         password.focus();
-        console.log("Please enter your password")
         alertErrorDiv.style.display = "block"
         errorMessage.innerHTML = "Please enter your password"
         return;
@@ -80,7 +78,6 @@ login = () => {
                         loginFormDiv.style.pointerEvents = "auto"
                         loader.style.display = "none"
                         localStorage.setItem('loggedInUser', JSON.stringify({ "email": email.value, "password": password.value }))
-                        console.log("matched")
                         window.location.replace('../../home/home.html')
                     }, 2000)
                 }
