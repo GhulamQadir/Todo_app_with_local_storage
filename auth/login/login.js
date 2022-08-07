@@ -33,7 +33,10 @@ closeErrorAlert = () => {
 
 
 // Login Function
-login = () => {
+login = (event) => {
+
+    event.preventDefault();
+
 
     // getting email and password from input fields
     var email = document.getElementById('email')

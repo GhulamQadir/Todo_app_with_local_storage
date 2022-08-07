@@ -24,7 +24,7 @@
             </div>
             <div id="edit_modal_btns">
                 <button id="modal_cancel_btn" onclick="closeModal()">Cancel</button>
-                <button id="modal_edit_btn" onclick="editValue()">Save Changes</button>
+                <button id="modal_edit_btn" onclick="editTodoValue()">Save Changes</button>
             </div>
         </div>
 
@@ -103,9 +103,13 @@
     <!-- Todos Main Div -->
     <div id="todos_main_div">
         <p id="todo_list_heading">Todo List</p>
+
+        <!-- Add Todo Form -->
         <div id="add_todo_div">
-            <input type="text" id="todo_field" placeholder="Add task">
-            <button id="add_task_btn" onclick="addTodo()">Add task</button>
+            <form method="post" onsubmit="addTodo(event)">
+                <input type="text" id="todo_field" placeholder="Add task">
+                <button id="add_task_btn" onclick="addTodo(event)">Add task</button>
+            </form>
         </div>
 
 

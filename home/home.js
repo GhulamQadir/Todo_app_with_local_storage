@@ -71,7 +71,9 @@ userProfileImg.src = avatarImg
 
 
 // Add Todo function
-addTodo = () => {
+addTodo = (event) => {
+    event.preventDefault()
+
 
     if (todo.value === "") {
         console.log("Please enter some value")

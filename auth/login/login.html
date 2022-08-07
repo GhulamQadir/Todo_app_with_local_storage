@@ -25,27 +25,30 @@
 
 
 
-        <!-- Text fields -->
-        <input id="email" type="email" placeholder="Email" />
-        <br>
-        <input id="password" type="password" placeholder="Password" />
-        <br>
-
-
-        <!-- Show Password Div -->
-        <div id="show_password_div">
-            <input id="show_password_box" type="checkbox" onclick="showAndHidePassword()"> <span
-                id="show_password_text">Show Password</span>
+        <!-- Login Form -->
+        <form onsubmit="login(event)">
+            <input id="email" type="email" placeholder="Email" />
             <br>
-        </div>
+            <input id="password" type="password" placeholder="Password" />
+            <br>
 
 
-        <!-- Login Button -->
-        <button id="login_btn" onclick="login()">Login</button>
-        <br>
-        <br>
+            <!-- Show Password Div -->
+            <div id="show_password_div">
+                <input id="show_password_box" type="checkbox" onclick="showAndHidePassword()"> <span
+                    id="show_password_text">Show Password</span>
+                <br>
+            </div>
 
 
+            <!-- Login Button -->
+            <button id="login_btn" onclick="login(event)">Login</button>
+            <br>
+            <br>
+
+        </form>
+
+        <!-- Form END -->
         <p id="dont_have_an_account">Don't have an account?
             <a id="signUp_link" href="../signUp/signUp.html"> Sign Up</a>
 

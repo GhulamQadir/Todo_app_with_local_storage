@@ -22,34 +22,39 @@
         <!-- Create Account Heading -->
         <p id="create_account_heading">Create Account</p>
 
-        <!-- Text fields -->
-        <input id="first_name" type="name" placeholder="First name">
-        <br>
-        <input id="last_name" type="name" placeholder="Last name">
-        <br>
-        <input id="gender" placeholder="Gender" list="gender_list">
-        <datalist id="gender_list">
-            <option value="Male">
-            <option value="Female">
-        </datalist>
-        <br>
-        <input id="email" type="email" placeholder="Email">
-        <br>
-        <input id="password" type="password" placeholder="Password">
-        <br>
 
-
-
-        <!-- Show Password Div -->
-        <div id="show_password_div">
-            <input id="checkBox" type="checkbox" onclick="showAndHidePassword()"><span id="show_password_text">Show
-                Password</span>
+        <!-- Sign Up FORM -->
+        <form method="post" onsubmit="signUp(event)">
+            <input id="first_name" type="name" placeholder="First name">
             <br>
-        </div>
+            <input id="last_name" type="name" placeholder="Last name">
+            <br>
+            <input id="gender" placeholder="Gender" list="gender_list">
+            <datalist id="gender_list">
+                <option value="Male">
+                <option value="Female">
+            </datalist>
+            <br>
+            <input id="email" type="email" placeholder="Email">
+            <br>
+            <input id="password" type="password" placeholder="Password">
+            <br>
 
 
-        <!-- Sign Up Button -->
-        <button id="signUp_btn" onclick="signUp()">Sign Up</button>
+
+            <!-- Show Password Div -->
+            <div id="show_password_div">
+                <input id="checkBox" type="checkbox" onclick="showAndHidePassword()"><span id="show_password_text">Show
+                    Password</span>
+                <br>
+            </div>
+
+
+            <!-- Sign Up Button -->
+            <button id="signUp_btn" onclick="signUp(event)">Sign Up</button>
+
+        </form>
+        <!-- Form END -->
 
         <p id="already_have_an_account">Already have an account?
             <a id="login_link" href="../login/login.html"> Login</a>

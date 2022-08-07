@@ -21,7 +21,10 @@ closeErrorAlert = () => {
 
 
 // Sign Up function
-signUp = () => {
+signUp = (event) => {
+
+    event.preventDefault();
+
 
     // Getting data from input fields 
     let firstName = document.getElementById('first_name')
@@ -141,7 +144,9 @@ signUp = () => {
 
                     userAccounts.push({ "firstName": firstName.value, "lastName": lastName.value, "email": email.value, "password": password.value, "gender": gender.value })
                     setUserAccounts()
-                    window.location.replace('../login/login.html')
+
+                    localStorage.setItem('loggedInUser', JSON.stringify({ "email": email.value, "password": password.value }))
+                    window.location.replace('../../home/home.html')
                 }, 2000)
 
             }
